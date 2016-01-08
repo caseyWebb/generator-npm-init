@@ -5,7 +5,7 @@
 [![Travis](https://img.shields.io/travis/caseyWebb/generator-npm-init.svg)](https://travis-ci.org/caseyWebb/generator-npm-init)
 [![CodeClimate](https://img.shields.io/codeclimate/github/caseyWebb/generator-npm-init.svg)](https://codeclimate.com/github/caseyWebb/generator-npm-init)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/caseyWebb/generator-npm-init.svg)](https://codeclimate.com/github/caseyWebb/generator-npm-init/coverage)
-[![Dependency Status](https://img.shields.io/david/strongloop/express.svg)](https://david-dm.org/caseyWebb/generator-npm-init)
+[![Dependency Status](https://img.shields.io/david/caseyWebb/generator-npm-init.svg)](https://david-dm.org/caseyWebb/generator-npm-init)
 
 Yeoman generator implementation of `npm init`. Useful for composition.
 
