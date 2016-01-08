@@ -1,9 +1,9 @@
 'use strict'
 
 const path = require('path')
-const yeoman = require('yeoman-generator')
+const Base = require('yeoman-generator').Base
 
-class Generator extends yeoman.generators.Base {
+class Generator extends Base {
   constructor() {
     super(...arguments)
 
