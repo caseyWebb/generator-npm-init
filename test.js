@@ -1,4 +1,3 @@
-import fs from 'fs'
 import test from 'ava'
 import path from 'path'
 import assert from 'yeoman-assert'
@@ -32,9 +31,49 @@ test('uses prompt responses', async (t) => { // eslint-disable-line
       author: 'foobar',
       license: 'MIT',
       test: 'ava --verbose'
-    },
+    })
+
+  assert.file('package.json')
+
+  assert.JSONFileContent('package.json', {
+    name: 'foo',
+    description: 'lorem ipsum dolor',
+    version: '9.9.9',
+    main: 'app.js',
+    repository: 'foo/bar',
+    keywords: [
+      'foo',
+      'bar',
+      'baz',
+      'qux'
+    ],
+    author: 'foobar',
+    license: 'MIT',
+    scripts: {
+      test: 'ava --verbose'
+    }
+  })
+})
+
+test('uses supplied defaults', async (t) => { // eslint-disable-line
+  await runGenerator(
     null,
-    null)
+    {
+      name: 'foo',
+      description: 'lorem ipsum dolor',
+      version: '9.9.9',
+      main: 'app.js',
+      repo: 'foo/bar',
+      keywords: [
+        'foo',
+        'bar',
+        'baz',
+        'qux'
+      ],
+      author: 'foobar',
+      license: 'MIT',
+      test: 'ava --verbose'
+    })
 
   assert.file('package.json')
 
@@ -65,14 +104,13 @@ test('respects skip-* options', async (t) => { // eslint-disable-line
       'skip-name': true,
       'skip-description': true,
       'skip-version': true,
-      'skip-entry': true,
+      'skip-main': true,
       'skip-test': true,
       'skip-repo': true,
       'skip-keywords': true,
       'skip-author': true,
       'skip-license': true
-    },
-    null)
+    })
 
   assert.file('package.json')
 

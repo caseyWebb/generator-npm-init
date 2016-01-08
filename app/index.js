@@ -10,16 +10,27 @@ class Generator extends yeoman.generators.Base {
     this.option('skip-name')
     this.option('skip-description')
     this.option('skip-version')
-    this.option('skip-entry')
+    this.option('skip-main')
     this.option('skip-test')
     this.option('skip-repo')
     this.option('skip-keywords')
     this.option('skip-author')
     this.option('skip-license')
+
+    this.option('name')
+    this.option('description')
+    this.option('version')
+    this.option('main')
+    this.option('test')
+    this.option('repo')
+    this.option('keywords')
+    this.option('author')
+    this.option('license')
   }
 
   initializing() {
     this.config.set(this.fs.readJSON('package.json', {}))
+
     this.config.defaults({
       name: path.basename(this.destinationRoot()),
       version: '1.0.0',
@@ -42,7 +53,7 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'name',
         message: 'name:',
-        default: this.config.get('name')
+        default: this.options['name'] || this.config.get('name')
       })
     }
 
@@ -51,7 +62,7 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'version',
         message: 'version:',
-        default: this.config.get('version')
+        default: this.options['version'] || this.config.get('version')
       })
     }
 
@@ -60,16 +71,16 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'description',
         message: 'description:',
-        default: this.config.get('description')
+        default: this.options['description'] || this.config.get('description')
       })
     }
 
-    if (!this.options['skip-entry']) {
+    if (!this.options['skip-main']) {
       prompts.push({
         type: 'input',
         name: 'main',
-        message: 'entry point:',
-        default: this.config.get('main')
+        message: 'main point:',
+        default: this.options['main'] || this.config.get('main')
       })
     }
 
@@ -78,16 +89,22 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'test',
         message: 'test command:',
-        default: this.config.get('scripts').test
+        default: this.options['test'] || this.config.get('scripts').test
       })
     }
 
     if (!this.options['skip-repo']) {
-      prompts.push({
+      const repoPrompt = {
         type: 'input',
         name: 'repository',
         message: 'git repository:'
-      })
+      }
+
+      if (this.options['repo']) {
+        repoPrompt.default = this.options['repo']
+      }
+
+      prompts.push(repoPrompt)
     }
 
     if (!this.options['skip-keywords']) {
@@ -95,7 +112,7 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'keywords',
         message: 'keywords (space-delimited):',
-        default: this.config.get('keywords').join(' ')
+        default: (this.options['keywords'] || this.config.get('keywords')).join(' ')
       })
     }
 
@@ -104,7 +121,7 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'author',
         message: 'author:',
-        default: this.config.get('author')
+        default: this.options['author'] || this.config.get('author')
       })
     }
 
@@ -113,7 +130,7 @@ class Generator extends yeoman.generators.Base {
         type: 'input',
         name: 'license',
         message: 'license:',
-        default: this.config.get('license')
+        default: this.options['license'] || this.config.get('license')
       })
     }
 
