@@ -16,7 +16,7 @@
     "package.json"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.21.1"
+    "yeoman-generator": "^0.22.2"
   },
   "devDependencies": {
     "ava": "^0.9.1",
