@@ -1,7 +1,7 @@
 import test from 'ava'
 import path from 'path'
 import assert from 'yeoman-assert'
-import { test as helpers } from 'yeoman-generator'
+import helpers from 'yeoman-test'
 
 test('uses the right defaults on bare project', async (t) => { // eslint-disable-line
   const dir = await runGenerator(null, null, null)
@@ -26,7 +26,7 @@ test('uses prompt responses', async (t) => { // eslint-disable-line
       description: 'lorem ipsum dolor',
       version: '9.9.9',
       main: 'app.js',
-      repository: 'foo/bar',
+      repo: 'foo/bar',
       keywords: 'foo bar baz qux',
       author: 'foobar',
       license: 'MIT',

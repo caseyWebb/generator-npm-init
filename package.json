@@ -16,6 +16,7 @@
     "package.json"
   ],
   "dependencies": {
+    "lodash": "^3.10.1",
     "yeoman-generator": "^0.22.2"
   },
   "devDependencies": {
@@ -24,7 +25,8 @@
     "codeclimate-test-reporter": "^0.1.1",
     "eslint": "^1.10.3",
     "nyc": "^5.3.0",
-    "yeoman-assert": "^2.0.0"
+    "yeoman-assert": "^2.0.0",
+    "yeoman-test": "^1.0.0"
   },
   "repository": "caseyWebb/generator-npm-init",
   "license": "MIT"

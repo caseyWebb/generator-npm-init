@@ -1,5 +1,6 @@
 'use strict'
 
+const _ = require('lodash')
 const path = require('path')
 const Base = require('yeoman-generator').Base
 
@@ -31,17 +32,28 @@ class Generator extends Base {
   initializing() {
     this.config.set(this.fs.readJSON('package.json', {}))
 
-    this.config.defaults({
-      name: path.basename(this.destinationRoot()),
-      version: '1.0.0',
-      description: '',
-      main: 'index.js',
-      scripts: {
-        test: 'echo "Error: no test specified" && exit 1'
-      },
-      keywords: [],
-      license: 'ISC'
-    })
+    this.config.defaults((() => {
+      const d = {
+        name: this.options.name || path.basename(this.destinationRoot()),
+        version: this.options.version || '1.0.0',
+        description: this.options.description || '',
+        main: this.options.main || 'index.js',
+        scripts: {
+          test: this.options.test || 'echo "Error: no test specified" && exit 1'
+        },
+        keywords: this.options.keywords || [],
+        license: this.options.license || 'ISC'
+      }
+
+      if (this.options.author) {
+        d.author = this.options.author
+      }
+      if (this.options.repo) {
+        d.repository = this.options.repo
+      }
+
+      return d
+    })())
   }
 
   prompting() {
@@ -53,7 +65,7 @@ class Generator extends Base {
         type: 'input',
         name: 'name',
         message: 'name:',
-        default: this.options['name'] || this.config.get('name')
+        default: this.config.get('name')
       })
     }
 
@@ -62,7 +74,7 @@ class Generator extends Base {
         type: 'input',
         name: 'version',
         message: 'version:',
-        default: this.options['version'] || this.config.get('version')
+        default: this.config.get('version')
       })
     }
 
@@ -71,7 +83,7 @@ class Generator extends Base {
         type: 'input',
         name: 'description',
         message: 'description:',
-        default: this.options['description'] || this.config.get('description')
+        default: this.config.get('description')
       })
     }
 
@@ -80,7 +92,7 @@ class Generator extends Base {
         type: 'input',
         name: 'main',
         message: 'main point:',
-        default: this.options['main'] || this.config.get('main')
+        default: this.config.get('main')
       })
     }
 
@@ -89,19 +101,19 @@ class Generator extends Base {
         type: 'input',
         name: 'test',
         message: 'test command:',
-        default: this.options['test'] || this.config.get('scripts').test
+        default: this.config.get('scripts').test
       })
     }
 
     if (!this.options['skip-repo']) {
       const repoPrompt = {
         type: 'input',
-        name: 'repository',
+        name: 'repo',
         message: 'git repository:'
       }
 
-      if (this.options['repo']) {
-        repoPrompt.default = this.options['repo']
+      if (this.config.get('repository')) {
+        repoPrompt.default = this.config.get('repository')
       }
 
       prompts.push(repoPrompt)
@@ -112,7 +124,7 @@ class Generator extends Base {
         type: 'input',
         name: 'keywords',
         message: 'keywords (space-delimited):',
-        default: (this.options['keywords'] || this.config.get('keywords')).join(' ')
+        default: this.config.get('keywords').join(' ')
       })
     }
 
@@ -121,7 +133,7 @@ class Generator extends Base {
         type: 'input',
         name: 'author',
         message: 'author:',
-        default: this.options['author'] || this.config.get('author')
+        default: this.config.get('author')
       })
     }
 
@@ -130,42 +142,49 @@ class Generator extends Base {
         type: 'input',
         name: 'license',
         message: 'license:',
-        default: this.options['license'] || this.config.get('license')
+        default: this.config.get('license')
       })
     }
 
     this.prompt(prompts, (res) => {
-      if (!this.options['skip-test']) {
-        res.scripts = {}
-        res.scripts.test = res.test
-        delete res.test
+      if (res.name) {
+        this.config.set('name', res.name)
+      }
+      if (res.version) {
+        this.config.set('version', res.version)
+      }
+      if (res.description) {
+        this.config.set('description', res.description)
+      }
+      if (res.main) {
+        this.config.set('main', res.main)
+      }
+      if (res.test) {
+        this.config.set('scripts', { test: res.test })
+      }
+      if (res.keywords && !res.keywords.match(/^\w?$/)) {
+        this.config.set('keywords', res.keywords.split(' '))
+      }
+      if (res.repo) {
+        this.config.set('repository', res.repo)
+      }
+      if (res.author) {
+        this.config.set('author', res.author)
+      }
+      if (res.license) {
+        this.config.set('license', res.license)
       }
 
-      if (!this.options['skip-description'] && res.description === '') {
-        delete res.description
-      }
-
-      if (!this.options['skip-repo'] && typeof res.repository === 'undefined') {
-        delete res.repository
-      }
-
-      if (!this.options['skip-author'] && typeof res.author === 'undefined') {
-        delete res.author
-      }
-
-      if (!this.options['skip-keywords'] && res.keywords.match(/^\w?$/)) {
-        delete res.keywords
-      } else if (!this.options['skip-keywords']) {
-        res.keywords = res.keywords.trim().split(' ')
-      }
-
-      this.pkg = res
       done()
     })
   }
 
   writing() {
-    this.fs.writeJSON('package.json', this.pkg)
+    const pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
+
+    _.merge(pkg, this.config.getAll())
+
+    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
   }
 }
 
