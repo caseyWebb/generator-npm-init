@@ -20,7 +20,7 @@
     "yeoman-generator": "^0.22.2"
   },
   "devDependencies": {
-    "ava": "^0.9.1",
+    "ava": "^0.10.0",
     "babel-eslint": "^4.1.6",
     "codeclimate-test-reporter": "^0.1.1",
     "eslint": "^1.10.3",
