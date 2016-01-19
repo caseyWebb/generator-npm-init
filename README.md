@@ -11,7 +11,7 @@ Yeoman generator implementation of `npm init`. Useful for composition.
 
 ```javascript
 this.composeWith('npm-init', {}, {
-  local: require.resolve('generator-npm-init/app'): false,
+  local: require.resolve('generator-npm-init/app'),
 })
 ```
 
