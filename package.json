@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "ava": "^0.13.0",
-    "babel-eslint": "^6.0.0",
+    "babel-eslint": "^6.0.3",
     "codeclimate-test-reporter": "^0.3.0",
     "eslint": "^2.1.0",
     "nyc": "^6.1.1",
