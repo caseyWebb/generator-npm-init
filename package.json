@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "lodash": "^4.0.0",
-    "yeoman-generator": "^0.22.2"
+    "yeoman-generator": "^0.23.1"
   },
   "devDependencies": {
     "ava": "^0.13.0",
