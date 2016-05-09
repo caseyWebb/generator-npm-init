@@ -1,7 +1,7 @@
 # generator-npm-init
 
 ![NPM](https://img.shields.io/npm/v/generator-npm-init.svg)
-![MIT](https://img.shields.io/npm/l/generator-npm-init.svg)
+![WTFPL](https://img.shields.io/npm/l/generator-npm-init.svg)
 [![Travis](https://img.shields.io/travis/caseyWebb/generator-npm-init.svg)](https://travis-ci.org/caseyWebb/generator-npm-init)
 [![CodeClimate](https://img.shields.io/codeclimate/github/caseyWebb/generator-npm-init.svg)](https://codeclimate.com/github/caseyWebb/generator-npm-init)
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/caseyWebb/generator-npm-init.svg)](https://codeclimate.com/github/caseyWebb/generator-npm-init/coverage)

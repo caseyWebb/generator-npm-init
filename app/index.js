@@ -1,4 +1,4 @@
-'use strict'
+'use strict' // eslint-disable-line
 
 const _ = require('lodash')
 const path = require('path')
@@ -146,7 +146,7 @@ class Generator extends Base {
       })
     }
 
-    this.prompt(prompts, (res) => {
+    this.prompt(prompts).then((res) => {
       if (res.name) {
         this.config.set('name', res.name)
       }

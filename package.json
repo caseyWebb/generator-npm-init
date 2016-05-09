@@ -6,10 +6,11 @@
   "author": "Casey Webb <notcaseywebb@gmail.com>",
   "main": "app/index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=html ava --verbose --serial"
+    "test": "ava --verbose --serial"
   },
   "keywords": [
     "yeoman-generator",
+    "yeoman",
     "npm",
     "init",
     "package",
@@ -17,10 +18,10 @@
   ],
   "dependencies": {
     "lodash": "^4.0.0",
-    "yeoman-generator": "^0.22.2"
+    "yeoman-generator": "^0.23.0"
   },
   "devDependencies": {
-    "ava": "^0.13.0",
+    "ava": "^0.14.0",
     "babel-eslint": "^6.0.0",
     "codeclimate-test-reporter": "^0.3.0",
     "eslint": "^2.1.0",
@@ -29,5 +30,5 @@
     "yeoman-test": "^1.0.0"
   },
   "repository": "caseyWebb/generator-npm-init",
-  "license": "MIT"
+  "license": "WTFPL"
 }
