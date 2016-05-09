@@ -1,6 +1,6 @@
 {
   "name": "generator-npm-init",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "npm init for yeoman",
   "homepage": "https://github.com/caseyWebb/generator-npm-init",
   "author": "Casey Webb <notcaseywebb@gmail.com>",
