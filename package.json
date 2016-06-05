@@ -6,7 +6,7 @@
   "author": "Casey Webb <notcaseywebb@gmail.com>",
   "main": "app/index.js",
   "scripts": {
-    "test": "ava --verbose --serial"
+    "test": "export NODE_ENV=test; nyc --reporter=lcov --reporter=html ava --verbose --serial"
   },
   "keywords": [
     "yeoman-generator",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "ava": "^0.15.0",
     "babel-eslint": "^6.0.0",
-    "codeclimate-test-reporter": "^0.3.0",
+    "coveralls": "^2.11.9",
     "eslint": "^2.1.0",
     "nyc": "^6.1.1",
     "yeoman-assert": "^2.0.0",

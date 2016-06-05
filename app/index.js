@@ -107,17 +107,12 @@ class Generator extends Base {
     }
 
     if (!this.options['skip-repo']) {
-      const repoPrompt = {
+      prompts.push({
         type: 'input',
         name: 'repo',
-        message: 'git repository:'
-      }
-
-      if (this.config.get('repository')) {
-        repoPrompt.default = this.package.repository
-      }
-
-      prompts.push(repoPrompt)
+        message: 'git repository:',
+        default: this.package.repository || ''
+      })
     }
 
     if (!this.options['skip-keywords']) {
