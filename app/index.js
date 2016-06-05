@@ -7,53 +7,54 @@ const Base = require('yeoman-generator').Base
 class Generator extends Base {
   constructor() {
     super(...arguments)
-
-    this.option('skip-name')
-    this.option('skip-description')
-    this.option('skip-version')
-    this.option('skip-main')
-    this.option('skip-test')
-    this.option('skip-repo')
-    this.option('skip-keywords')
-    this.option('skip-author')
-    this.option('skip-license')
-
-    this.option('name')
-    this.option('description')
-    this.option('version')
-    this.option('main')
-    this.option('test')
-    this.option('repo')
-    this.option('keywords')
-    this.option('author')
-    this.option('license')
+    this.package = {}
   }
 
   initializing() {
-    this.config.set(this.fs.readJSON('package.json', {}))
-
-    this.config.defaults((() => {
-      const d = {
-        name: this.options.name || path.basename(this.destinationRoot()),
-        version: this.options.version || '1.0.0',
-        description: this.options.description || '',
-        main: this.options.main || 'index.js',
+    const defaults = _.reduce(
+      {
+        name: path.basename(this.destinationRoot()),
+        version: '1.0.0',
+        description: '',
+        main: 'index.js',
         scripts: {
-          test: this.options.test || 'echo "Error: no test specified" && exit 1'
+          test: 'echo "Error: no test specified" && exit 1'
         },
-        keywords: this.options.keywords || [],
-        license: this.options.license || 'ISC'
-      }
+        keywords: [],
+        license: 'ISC'
+      },
+      (memo, v, k) => this.options[`skip-${k}`]
+        ? memo
+        : _.extend(memo, { [k]: v }),
+      {}
+    )
 
-      if (this.options.author) {
-        d.author = this.options.author
-      }
-      if (this.options.repo) {
-        d.repository = this.options.repo
-      }
+    const existing = this.fs.readJSON('package.json')
 
-      return d
-    })())
+    const options = _.reduce(this.options, (memo, v, k) =>
+      k.indexOf('skip-') === 0
+        ? memo
+        : _.extend(memo, { [k]: v }),
+      {})
+
+    const aliases = {
+      author: this.options.author,
+      repository: this.options.repo,
+      scripts: {
+        test: this.options.test
+      }
+    }
+
+    if (this.options['skip-test']) {
+      delete defaults.scripts.test
+    }
+
+    _.merge(
+      this.package,
+      defaults,
+      existing,
+      options,
+      aliases)
   }
 
   prompting() {
@@ -65,7 +66,7 @@ class Generator extends Base {
         type: 'input',
         name: 'name',
         message: 'name:',
-        default: this.config.get('name')
+        default: this.package.name
       })
     }
 
@@ -74,7 +75,7 @@ class Generator extends Base {
         type: 'input',
         name: 'version',
         message: 'version:',
-        default: this.config.get('version')
+        default: this.package.version
       })
     }
 
@@ -83,7 +84,7 @@ class Generator extends Base {
         type: 'input',
         name: 'description',
         message: 'description:',
-        default: this.config.get('description')
+        default: this.package.description
       })
     }
 
@@ -92,7 +93,7 @@ class Generator extends Base {
         type: 'input',
         name: 'main',
         message: 'main point:',
-        default: this.config.get('main')
+        default: this.package.main
       })
     }
 
@@ -101,7 +102,7 @@ class Generator extends Base {
         type: 'input',
         name: 'test',
         message: 'test command:',
-        default: this.config.get('scripts').test
+        default: this.package.scripts.test
       })
     }
 
@@ -113,7 +114,7 @@ class Generator extends Base {
       }
 
       if (this.config.get('repository')) {
-        repoPrompt.default = this.config.get('repository')
+        repoPrompt.default = this.package.repository
       }
 
       prompts.push(repoPrompt)
@@ -124,7 +125,7 @@ class Generator extends Base {
         type: 'input',
         name: 'keywords',
         message: 'keywords (space-delimited):',
-        default: this.config.get('keywords').join(' ')
+        default: this.package.keywords ? this.package.keywords.join(' ') : ''
       })
     }
 
@@ -133,7 +134,7 @@ class Generator extends Base {
         type: 'input',
         name: 'author',
         message: 'author:',
-        default: this.config.get('author')
+        default: this.package.author
       })
     }
 
@@ -142,37 +143,37 @@ class Generator extends Base {
         type: 'input',
         name: 'license',
         message: 'license:',
-        default: this.config.get('license')
+        default: this.package.license
       })
     }
 
     this.prompt(prompts).then((res) => {
       if (res.name) {
-        this.config.set('name', res.name)
+        this.package.name = res.name
       }
       if (res.version) {
-        this.config.set('version', res.version)
+        this.package.version = res.version
       }
       if (res.description) {
-        this.config.set('description', res.description)
+        this.package.description = res.description
       }
       if (res.main) {
-        this.config.set('main', res.main)
+        this.package.main = res.main
       }
       if (res.test) {
-        this.config.set('scripts', { test: res.test })
+        this.package.scripts = { test: res.test }
       }
       if (res.keywords && !res.keywords.match(/^\w?$/)) {
-        this.config.set('keywords', res.keywords.split(' '))
+        this.package.keywords = res.keywords.split(' ')
       }
       if (res.repo) {
-        this.config.set('repository', res.repo)
+        this.package.repository = res.repo
       }
       if (res.author) {
-        this.config.set('author', res.author)
+        this.package.author = res.author
       }
       if (res.license) {
-        this.config.set('license', res.license)
+        this.package.license = res.license
       }
 
       done()
@@ -180,11 +181,7 @@ class Generator extends Base {
   }
 
   writing() {
-    const pkg = this.fs.readJSON(this.destinationPath('package.json'), {})
-
-    _.merge(pkg, this.config.getAll())
-
-    this.fs.writeJSON(this.destinationPath('package.json'), pkg)
+    this.fs.writeJSON(this.destinationPath('package.json'), this.package)
   }
 }
 

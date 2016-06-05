@@ -101,20 +101,22 @@ test('respects skip-* options', async (t) => { // eslint-disable-line
   await runGenerator(
     null,
     {
-      'skip-name': true,
-      'skip-description': true,
-      'skip-version': true,
-      'skip-main': true,
-      'skip-test': true,
-      'skip-repo': true,
-      'skip-keywords': true,
-      'skip-author': true,
-      'skip-license': true
+      'skip-name': true
     })
 
   assert.file('package.json')
+  assert.JSONFileContent('package.json', { name: undefined, 'skip-name': undefined })
+})
 
-  assert.JSONFileContent('package.json', { })
+test('respects skip-test option', async (t) => { // eslint-disable-line
+  await runGenerator(
+    null,
+    {
+      'skip-test': true
+    })
+
+  assert.file('package.json')
+  assert.JSONFileContent('package.json', { scripts: { test: undefined } })
 })
 
 function runGenerator(prompts, opts) {
