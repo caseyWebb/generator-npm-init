@@ -176,6 +176,8 @@ class Generator extends Base {
   }
 
   writing() {
+    const removeProps = ['env', 'resolved', 'namespace', 'argv']
+    removeProps.forEach( (e) => delete this.package[e] )
     this.fs.writeJSON(this.destinationPath('package.json'), this.package)
   }
 }
