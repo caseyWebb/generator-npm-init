@@ -37,14 +37,6 @@ class Generator extends Base {
         : _.extend(memo, { [k]: v }),
       {})
 
-    const aliases = {
-      author: this.options.author,
-      repository: this.options.repo,
-      scripts: {
-        test: this.options.test
-      }
-    }
-
     if (this.options['skip-test']) {
       delete defaults.scripts.test
     }
@@ -53,8 +45,10 @@ class Generator extends Base {
       this.package,
       defaults,
       existing,
-      options,
-      aliases)
+      options)
+
+      this.package.repository = this.package.repository || this.package.repo
+      delete this.package.repo
   }
 
   prompting() {
@@ -162,7 +156,7 @@ class Generator extends Base {
         this.package.keywords = res.keywords.split(' ')
       }
       if (res.repo) {
-        this.package.repository = res.repo
+        this.package.repository = res.repo        
       }
       if (res.author) {
         this.package.author = res.author
@@ -176,8 +170,9 @@ class Generator extends Base {
   }
 
   writing() {
-    const removeProps = ['env', 'resolved', 'namespace', 'argv']
-    removeProps.forEach( (e) => delete this.package[e] )
+    const junk = ['env', 'resolved', 'namespace', 'argv']
+    junk.forEach((e) => delete this.package[e])
+
     this.fs.writeJSON(this.destinationPath('package.json'), this.package)
   }
 }
