@@ -41,14 +41,20 @@ class Generator extends Base {
       delete defaults.scripts.test
     }
 
+    const aliases = {
+      author: this.options.author,
+      repository: this.options.repo,
+      scripts: {
+        test: this.options.test
+      }
+    }
+
     _.merge(
       this.package,
       defaults,
       existing,
-      options)
-
-      this.package.repository = this.package.repository || this.package.repo
-      delete this.package.repo
+      options,
+      aliases)
   }
 
   prompting() {
@@ -156,7 +162,7 @@ class Generator extends Base {
         this.package.keywords = res.keywords.split(' ')
       }
       if (res.repo) {
-        this.package.repository = res.repo        
+        this.package.repository = res.repo
       }
       if (res.author) {
         this.package.author = res.author
@@ -170,7 +176,7 @@ class Generator extends Base {
   }
 
   writing() {
-    const junk = ['env', 'resolved', 'namespace', 'argv']
+    const junk = ['env', 'resolved', 'namespace', 'argv', 'repo', 'test']
     junk.forEach((e) => delete this.package[e])
 
     this.fs.writeJSON(this.destinationPath('package.json'), this.package)
