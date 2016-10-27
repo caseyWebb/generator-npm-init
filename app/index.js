@@ -30,7 +30,7 @@ class Generator extends Base {
       {}
     )
 
-    if (!this.options.repository && !this.options.repo) {
+    if (!this.options.repository && !this.options.repo && this.fs.exists('.git/config')) {
       const gitConfigIni = this.fs.read('.git/config')
 
       if (gitConfigIni) {
