@@ -2,6 +2,7 @@
 
 const _ = require('lodash')
 const path = require('path')
+const ini = require('ini')
 const Base = require('yeoman-generator').Base
 
 class Generator extends Base {
@@ -28,6 +29,19 @@ class Generator extends Base {
         : _.extend(memo, { [k]: v }),
       {}
     )
+
+    if (!this.options.repository && !this.options.repo) {
+      const gitConfigIni = this.fs.read('.git/config')
+
+      if (gitConfigIni) {
+        const gitConfig = ini.parse(gitConfigIni)
+        this.options['skip-repo'] = true
+        this.options.repository = {
+          type: 'git',
+          url: gitConfig['remote "origin"'].url
+        }
+      }
+    }
 
     const existing = this.fs.readJSON('package.json')
 
