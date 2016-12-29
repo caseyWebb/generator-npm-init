@@ -1,3 +1,4 @@
+import { execSync } from 'child_process'
 import test from 'ava'
 import path from 'path'
 import assert from 'yeoman-assert'
@@ -119,12 +120,35 @@ test('respects skip-test option', async (t) => { // eslint-disable-line
   assert.JSONFileContent('package.json', { scripts: { test: undefined } })
 })
 
-function runGenerator(prompts, opts) {
+test('infers repository field from git repo', async (t) => { // eslint-disable-line
+  await runGenerator(
+    null,
+    null,
+    (dir) => {
+      execSync('git init', { cwd: dir })
+      execSync('git remote add origin https://example.com/foo.git', { cwd: dir })
+    })
+
+  assert.file('package.json')
+  assert.JSONFileContent('package.json', {
+    repository: {
+      type: 'git',
+      url: 'https://example.com/foo.git'
+    }
+  })
+})
+
+function runGenerator(prompts, opts, pre) {
   let basename
 
   return new Promise((resolve) => {
     helpers.run(path.join(__dirname, 'app'))
-      .inTmpDir((d) => basename = path.basename(d))
+      .inTmpDir((dir) => {
+        if (pre) {
+          pre(dir)
+        }
+        basename = path.basename(dir)
+      })
       .withOptions(opts || {})
       .withPrompts(prompts || {})
       .on('end', () =>
