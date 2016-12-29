@@ -3,9 +3,9 @@
 const _ = require('lodash')
 const path = require('path')
 const ini = require('ini')
-const Base = require('yeoman-generator').Base
+const YeomanGenerator = require('yeoman-generator')
 
-class Generator extends Base {
+class Generator extends YeomanGenerator {
   constructor() {
     super(...arguments)
     this.package = {}
