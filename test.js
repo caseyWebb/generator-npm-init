@@ -138,6 +138,23 @@ test('infers repository field from git repo', async (t) => { // eslint-disable-l
   })
 })
 
+test('git repository field inference doesn\'t break on no remote origin', async (t) => { // eslint-disable-line
+  await runGenerator(
+    null,
+    null,
+    (dir) => {
+      execSync('git init', { cwd: dir })
+    })
+
+  assert.file('package.json')
+  assert.JSONFileContent('package.json', {
+    repository: {
+      type: 'git',
+      url: ''
+    }
+  })
+})
+
 function runGenerator(prompts, opts, pre) {
   let basename
 
@@ -153,5 +170,5 @@ function runGenerator(prompts, opts, pre) {
       .withPrompts(prompts || {})
       .on('end', () =>
         resolve(basename))
-    })
+  })
 }

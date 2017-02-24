@@ -38,7 +38,7 @@ class Generator extends YeomanGenerator {
         this.options['skip-repo'] = true
         this.options.repository = {
           type: 'git',
-          url: gitConfig['remote "origin"'].url
+          url: gitConfig['remote "origin"'] ? gitConfig['remote "origin"'].url : ''
         }
       }
     }
