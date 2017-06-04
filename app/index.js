@@ -190,7 +190,16 @@ class Generator extends YeomanGenerator {
   }
 
   writing() {
-    const junk = ['env', 'resolved', 'namespace', 'argv', 'repo', 'test']
+    const junk = [
+      'env',
+      'resolved',
+      'namespace',
+      'argv',
+      'repo',
+      'test',
+      '_'
+    ]
+
     junk.forEach((e) => delete this.package[e])
 
     this.fs.writeJSON(this.destinationPath('package.json'), this.package)

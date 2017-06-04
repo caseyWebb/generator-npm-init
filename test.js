@@ -3,6 +3,7 @@ import test from 'ava'
 import path from 'path'
 import assert from 'yeoman-assert'
 import helpers from 'yeoman-test'
+import { readFileSync } from 'fs'
 
 test('uses the right defaults on bare project', async (t) => { // eslint-disable-line
   const dir = await runGenerator(null, null, null)
@@ -118,6 +119,44 @@ test('respects skip-test option', async (t) => { // eslint-disable-line
 
   assert.file('package.json')
   assert.JSONFileContent('package.json', { scripts: { test: undefined } })
+})
+
+test('removes extraneous fields from package.json', async (t) => { //eslint-disable-line
+  await runGenerator(null, {
+    name: 'foo',
+    description: 'lorem ipsum dolor',
+    version: '9.9.9',
+    main: 'app.js',
+    repo: 'foo/bar',
+    keywords: [
+      'foo',
+      'bar',
+      'baz',
+      'qux'
+    ],
+    author: 'foobar',
+    license: 'MIT',
+    test: 'ava --verbose'
+  })
+
+  assert.file('package.json')
+
+  const raw = readFileSync('package.json', 'utf8')
+  const parsed = JSON.parse(raw)
+
+  const junkFields = [
+    'env',
+    'resolved',
+    'namespace',
+    'argv',
+    'repo',
+    'test',
+    '_'
+  ]
+
+  junkFields.forEach(field => {
+    assert.ok(!parsed.hasOwnProperty(field), `package.json contains ${field}`)
+  })
 })
 
 test('infers repository field from git repo', async (t) => { // eslint-disable-line
