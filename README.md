@@ -1,5 +1,7 @@
 # generator-npm-init
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/caseyWebb/generator-npm-init.svg)](https://greenkeeper.io/)
+
 ![NPM](https://img.shields.io/npm/v/generator-npm-init.svg)
 ![WTFPL](https://img.shields.io/npm/l/generator-npm-init.svg)
 [![Travis](https://img.shields.io/travis/caseyWebb/generator-npm-init.svg)](https://travis-ci.org/caseyWebb/generator-npm-init)
