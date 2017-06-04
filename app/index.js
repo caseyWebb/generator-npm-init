@@ -1,11 +1,11 @@
-'use strict' // eslint-disable-line
+'use strict'
 
 const _ = require('lodash')
 const path = require('path')
 const ini = require('ini')
 const YeomanGenerator = require('yeoman-generator')
 
-class Generator extends YeomanGenerator {
+module.exports = class Generator extends YeomanGenerator {
   constructor() {
     super(...arguments)
     this.package = {}
@@ -205,5 +205,3 @@ class Generator extends YeomanGenerator {
     this.fs.writeJSON(this.destinationPath('package.json'), this.package)
   }
 }
-
-module.exports = Generator

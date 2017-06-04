@@ -1,11 +1,12 @@
-import { execSync } from 'child_process'
-import test from 'ava'
-import path from 'path'
-import assert from 'yeoman-assert'
-import helpers from 'yeoman-test'
-import { readFileSync } from 'fs'
+'use strict'
 
-test('uses the right defaults on bare project', async (t) => { // eslint-disable-line
+const { execSync } = require('child_process')
+const path = require('path')
+const { readFileSync } = require('fs')
+const assert = require('yeoman-assert')
+const helpers = require('yeoman-test')
+
+test('uses the right defaults on bare project', async () => { // eslint-disable-line
   const dir = await runGenerator(null, null, null)
 
   assert.file('package.json')
@@ -21,7 +22,7 @@ test('uses the right defaults on bare project', async (t) => { // eslint-disable
   })
 })
 
-test('uses prompt responses', async (t) => { // eslint-disable-line
+test('uses prompt responses', async () => { // eslint-disable-line
   await runGenerator(
     {
       name: 'foo',
@@ -57,7 +58,7 @@ test('uses prompt responses', async (t) => { // eslint-disable-line
   })
 })
 
-test('uses supplied defaults', async (t) => { // eslint-disable-line
+test('uses supplied defaults', async () => { // eslint-disable-line
   await runGenerator(
     null,
     {
@@ -99,7 +100,7 @@ test('uses supplied defaults', async (t) => { // eslint-disable-line
   })
 })
 
-test('respects skip-* options', async (t) => { // eslint-disable-line
+test('respects skip-* options', async () => { // eslint-disable-line
   await runGenerator(
     null,
     {
@@ -110,7 +111,7 @@ test('respects skip-* options', async (t) => { // eslint-disable-line
   assert.JSONFileContent('package.json', { name: undefined, 'skip-name': undefined })
 })
 
-test('respects skip-test option', async (t) => { // eslint-disable-line
+test('respects skip-test option', async () => { // eslint-disable-line
   await runGenerator(
     null,
     {
@@ -121,7 +122,7 @@ test('respects skip-test option', async (t) => { // eslint-disable-line
   assert.JSONFileContent('package.json', { scripts: { test: undefined } })
 })
 
-test('removes extraneous fields from package.json', async (t) => { //eslint-disable-line
+test('removes extraneous fields from package.json', async () => { //eslint-disable-line
   await runGenerator(null, {
     name: 'foo',
     description: 'lorem ipsum dolor',
@@ -154,12 +155,12 @@ test('removes extraneous fields from package.json', async (t) => { //eslint-disa
     '_'
   ]
 
-  junkFields.forEach(field => {
+  junkFields.forEach((field) => {
     assert.ok(!parsed.hasOwnProperty(field), `package.json contains ${field}`)
   })
 })
 
-test('infers repository field from git repo', async (t) => { // eslint-disable-line
+test('infers repository field from git repo', async () => { // eslint-disable-line
   await runGenerator(
     null,
     null,
@@ -177,7 +178,7 @@ test('infers repository field from git repo', async (t) => { // eslint-disable-l
   })
 })
 
-test('git repository field inference doesn\'t break on no remote origin', async (t) => { // eslint-disable-line
+test('git repository field inference doesn\'t break on no remote origin', async () => { // eslint-disable-line
   await runGenerator(
     null,
     null,
