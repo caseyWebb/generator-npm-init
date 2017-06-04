@@ -2,5 +2,8 @@
   "extends": "profiscience",
   "parserOptions": {
     "sourceType": "script"
+  },
+  "env": {
+    "jest": true
   }
 }
