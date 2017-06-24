@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.1.0",
     "eslint-config-profiscience": "^1.4.2",
     "jest": "^20.0.4",
     "yeoman-assert": "^3.0.0",
