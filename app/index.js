@@ -170,7 +170,7 @@ module.exports = class Generator extends YeomanGenerator {
         this.package.main = res.main
       }
       if (res.test) {
-        this.package.scripts = { test: res.test }
+        this.package.scripts = _.extend({}, this.package.scripts, { test: res.test }) 
       }
       if (res.keywords && !res.keywords.match(/^\w?$/)) {
         this.package.keywords = res.keywords.split(' ')
