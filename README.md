@@ -37,6 +37,13 @@ this.composeWith(require.resolve('generator-npm-init/app')/*, options*/)
   repo: '',
   keywords: [],
   author: '',
-  license: 'ISC'
+  license: 'ISC',
+
+  // configure run script defaults
+  scripts: {
+    start: 'node dist/index.js',
+    build: 'webpack -p',
+    watch: 'webpack-dev-server'
+  }
 }
 ```
