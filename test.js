@@ -75,7 +75,9 @@ test('uses supplied defaults', async () => {
       ],
       author: 'foobar',
       license: 'MIT',
-      test: 'ava --verbose'
+      scripts: {
+        start: 'do something'
+      }
     })
 
   assert.file('package.json')
@@ -95,7 +97,8 @@ test('uses supplied defaults', async () => {
     author: 'foobar',
     license: 'MIT',
     scripts: {
-      test: 'ava --verbose'
+      test: 'echo "Error: no test specified" && exit 1',
+      start: 'do something'
     }
   })
 })
@@ -120,6 +123,26 @@ test('respects skip-test option', async () => {
 
   assert.file('package.json')
   assert.JSONFileContent('package.json', { scripts: { test: undefined } })
+})
+
+test('respects skip-test option but still includes script defaults', async () => {
+  await runGenerator(
+    null,
+    {
+      'skip-test': true,
+      scripts: {
+        start: 'webpack-dev-server'
+      }
+    })
+  
+  assert.file('package.json')
+
+  assert.JSONFileContent('package.json', {
+    scripts: {
+      test: undefined,
+      start: 'webpack-dev-server'
+    }
+  })
 })
 
 test('removes extraneous fields from package.json', async () => {
