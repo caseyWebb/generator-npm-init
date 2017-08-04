@@ -76,7 +76,7 @@ test('uses supplied defaults', async () => {
       author: 'foobar',
       license: 'MIT',
       scripts: {
-          start: 'do something'
+        start: 'do something'
       }
     })
 
