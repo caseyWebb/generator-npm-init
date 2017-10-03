@@ -22,7 +22,7 @@
     "yeoman-generator": "^2.0.0"
   },
   "devDependencies": {
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.1.0",
     "eslint-config-profiscience": "^1.4.2",
     "jest": "^21.0.0",
