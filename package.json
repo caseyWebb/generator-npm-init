@@ -27,7 +27,7 @@
     "eslint-config-profiscience": "^2.0.0",
     "jest": "^23.4.1",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.0.0"
+    "yeoman-test": "^2.0.0"
   },
   "repository": "caseyWebb/generator-npm-init",
   "license": "WTFPL",
