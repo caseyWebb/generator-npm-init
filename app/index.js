@@ -12,198 +12,128 @@ module.exports = class Generator extends YeomanGenerator {
   }
 
   initializing() {
-    const defaults = _.reduce(
-      {
-        name: path.basename(this.destinationRoot()),
-        version: '1.0.0',
-        description: '',
-        main: 'index.js',
-        scripts: {
-          test: 'echo "Error: no test specified" && exit 1'
-        },
-        keywords: [],
-        license: 'ISC'
-      },
-      (memo, v, k) => this.options[`skip-${k}`]
-        ? memo
-        : _.extend(memo, { [k]: v }),
+    normalizeOptions(this.options)
+
+    const defaults = getDefaults(this.destinationRoot(), this.options)
+    const existing = this.fs.readJSON('package.json')
+
+    if (!this.options.repository && this.fs.exists('.git/config')) {
+      this.options['skip-repo'] = true
+      this.options.repository = getRepositoryInformationFromGit(this.fs)
+    }
+
+    const options = _.reduce(
+      this.options,
+      (memo, v, k) => k.indexOf('skip-') === 0 ? memo : _.extend(memo, { [k]: v }),
       {}
     )
 
-    if (!this.options.repository && !this.options.repo && this.fs.exists('.git/config')) {
-      const gitConfigIni = this.fs.read('.git/config')
-
-      if (gitConfigIni) {
-        const gitConfig = ini.parse(gitConfigIni)
-        this.options['skip-repo'] = true
-        this.options.repository = {
-          type: 'git',
-          url: gitConfig['remote "origin"'] ? gitConfig['remote "origin"'].url : ''
-        }
-      }
-    }
-
-    const existing = this.fs.readJSON('package.json')
-
-    const options = _.reduce(this.options, (memo, v, k) =>
-      k.indexOf('skip-') === 0
-        ? memo
-        : _.extend(memo, { [k]: v }),
-      {})
-
     if (this.options['skip-test']) {
       delete defaults.scripts.test
-    }
-
-    const aliases = {
-      author: this.options.author,
-      repository: this.options.repo,
-      scripts: {
-        test: this.options.test
-      }
     }
 
     _.merge(
       this.package,
       defaults,
       existing,
-      options,
-      aliases)
+      options
+    )
   }
 
-  prompting() {
-    const done = this.async()
-    const prompts = []
-
-    if (!this.options['skip-name']) {
-      prompts.push({
+  async prompting() {
+    const prompts = [
+      ['name', 'package name'],
+      ['version'],
+      ['description'],
+      ['main', 'entry point'],
+      ['test', 'test command'],
+      ['repo', 'git repository'],
+      ['keywords', 'keywords (space-delimited)', this.package.keywords ? this.package.keywords.join(' ') : ''],
+      ['author'],
+      ['license']
+    ]
+      .filter(([name]) => !this.options[`skip-${name}`])
+      .map(([name, message = name, defaultV = this.package[name]]) => ({
         type: 'input',
-        name: 'name',
-        message: 'package name:',
-        default: this.package.name
-      })
+        name,
+        message: `${message}:`,
+        default: defaultV
+      }))
+
+    const res = await this.prompt(prompts)
+
+    if (res.test) {
+      res.scripts = { test: res.test }
+      delete res.test
+    }
+    if (res.keywords && !res.keywords.match(/^\w?$/)) {
+      res.keywords = res.keywords.split(' ')
+    }
+    if (res.repo) {
+      res.repository = res.repo
+      delete res.repo
     }
 
-    if (!this.options['skip-version']) {
-      prompts.push({
-        type: 'input',
-        name: 'version',
-        message: 'version:',
-        default: this.package.version
-      })
-    }
+    _.merge(this.package, res)
 
-    if (!this.options['skip-description']) {
-      prompts.push({
-        type: 'input',
-        name: 'description',
-        message: 'description:',
-        default: this.package.description
-      })
-    }
-
-    if (!this.options['skip-main']) {
-      prompts.push({
-        type: 'input',
-        name: 'main',
-        message: 'entry point:',
-        default: this.package.main
-      })
-    }
-
-    if (!this.options['skip-test']) {
-      prompts.push({
-        type: 'input',
-        name: 'test',
-        message: 'test command:',
-        default: this.package.scripts.test
-      })
-    }
-
-    if (!this.options['skip-repo']) {
-      prompts.push({
-        type: 'input',
-        name: 'repo',
-        message: 'git repository:',
-        default: this.package.repository || ''
-      })
-    }
-
-    if (!this.options['skip-keywords']) {
-      prompts.push({
-        type: 'input',
-        name: 'keywords',
-        message: 'keywords (space-delimited):',
-        default: this.package.keywords ? this.package.keywords.join(' ') : ''
-      })
-    }
-
-    if (!this.options['skip-author']) {
-      prompts.push({
-        type: 'input',
-        name: 'author',
-        message: 'author:',
-        default: this.package.author
-      })
-    }
-
-    if (!this.options['skip-license']) {
-      prompts.push({
-        type: 'input',
-        name: 'license',
-        message: 'license:',
-        default: this.package.license
-      })
-    }
-
-    this.prompt(prompts).then((res) => {
-      if (res.name) {
-        this.package.name = res.name
-      }
-      if (res.version) {
-        this.package.version = res.version
-      }
-      if (res.description) {
-        this.package.description = res.description
-      }
-      if (res.main) {
-        this.package.main = res.main
-      }
-      if (res.test) {
-        this.package.scripts = _.extend({}, this.package.scripts, { test: res.test }) 
-      }
-      if (res.keywords && !res.keywords.match(/^\w?$/)) {
-        this.package.keywords = res.keywords.split(' ')
-      }
-      if (res.repo) {
-        this.package.repository = res.repo
-      }
-      if (res.author) {
-        this.package.author = res.author
-      }
-      if (res.license) {
-        this.package.license = res.license
-      }
-
-      done()
-    })
+    // strip extraneous props
+    this.package = _.reduce(
+      [
+        'name',
+        'version',
+        'description',
+        'main',
+        'repository',
+        'keywords',
+        'author',
+        'license',
+        'scripts'
+      ],
+      (accum, k) => _.extend(accum, { [k]: this.package[k] }),
+      {}
+    )
   }
 
   writing() {
-    const validProps = [
-      'name',
-      'version',
-      'description',
-      'main',
-      'repository',
-      'keywords',
-      'author',
-      'license',
-      'scripts'
-    ]
+    this.fs.writeJSON(this.destinationPath('package.json'), this.package)
+  }
+}
 
-    const cleanPkg = _.reduce(validProps, (accum, k) => _.extend(accum, { [k]: this.package[k] }), {})
+function normalizeOptions(options) {
+  const aliases = {
+    repository: options.repo,
+    scripts: {
+      test: options.test
+    }
+  }
+  _.merge(options, aliases)
+  delete options.repo
+  delete options.test
+}
 
-    this.fs.writeJSON(this.destinationPath('package.json'), cleanPkg)
+function getDefaults(fd, options) {
+  return _.reduce(
+    {
+      name: path.basename(fd),
+      version: '1.0.0',
+      description: '',
+      main: 'index.js',
+      scripts: {
+        test: 'echo "Error: no test specified" && exit 1'
+      },
+      keywords: [],
+      license: 'ISC'
+    },
+    (memo, v, k) => (options[`skip-${k}`] ? memo : _.extend(memo, { [k]: v })),
+    {}
+  )
+}
+
+function getRepositoryInformationFromGit(fs) {
+  const gitConfigIni = fs.read('.git/config')
+  const gitConfig = ini.parse(gitConfigIni)
+  return {
+    type: 'git',
+    url: gitConfig['remote "origin"'] ? gitConfig['remote "origin"'].url : ''
   }
 }
