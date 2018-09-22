@@ -79,7 +79,7 @@ module.exports = class Generator extends YeomanGenerator {
       prompts.push({
         type: 'input',
         name: 'name',
-        message: 'name:',
+        message: 'package name:',
         default: this.package.name
       })
     }
@@ -106,7 +106,7 @@ module.exports = class Generator extends YeomanGenerator {
       prompts.push({
         type: 'input',
         name: 'main',
-        message: 'main point:',
+        message: 'entry point:',
         default: this.package.main
       })
     }
