@@ -29,10 +29,16 @@
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^2.0.0"
   },
-  "repository": "caseyWebb/generator-npm-init",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseyWebb/generator-npm-init.git"
+  },
   "license": "WTFPL",
   "jest": {
     "collectCoverage": true,
     "coverageDirectory": "coverage"
+  },
+  "bugs": {
+    "url": "https://github.com/caseyWebb/generator-npm-init/issues"
   }
 }

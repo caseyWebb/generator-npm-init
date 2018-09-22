@@ -201,6 +201,28 @@ test('infers repository field from git repo', async () => {
   })
 })
 
+test('sets bugs and homepage for github repo', async () => {
+  await runGenerator(
+    null,
+    null,
+    (dir) => {
+      execSync('git init', { cwd: dir })
+      execSync('git remote add origin git+https://github.com/caseyWebb/generator-npm-init.git', { cwd: dir })
+    })
+
+  assert.file('package.json')
+  assert.JSONFileContent('package.json', {
+    repository: {
+      type: 'git',
+      url: 'git+https://github.com/caseyWebb/generator-npm-init.git'
+    },
+    bugs: {
+      url: 'https://github.com/caseyWebb/generator-npm-init/issues'
+    },
+    homepage: 'https://github.com/caseyWebb/generator-npm-init#readme'
+  })
+})
+
 test('git repository field inference doesn\'t break on no remote origin', async () => {
   await runGenerator(
     null,

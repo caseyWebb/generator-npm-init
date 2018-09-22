@@ -19,7 +19,7 @@ module.exports = class Generator extends YeomanGenerator {
 
     if (!this.options.repository && this.fs.exists('.git/config')) {
       this.options['skip-repo'] = true
-      this.options.repository = getRepositoryInformationFromGit(this.fs)
+      _.merge(this.options, getRepositoryInformationFromGit(this.fs))
     }
 
     const options = _.reduce(
@@ -84,6 +84,8 @@ module.exports = class Generator extends YeomanGenerator {
         'description',
         'main',
         'repository',
+        'bugs',
+        'homepage',
         'keywords',
         'author',
         'license',
@@ -132,8 +134,22 @@ function getDefaults(fd, options) {
 function getRepositoryInformationFromGit(fs) {
   const gitConfigIni = fs.read('.git/config')
   const gitConfig = ini.parse(gitConfigIni)
-  return {
-    type: 'git',
-    url: gitConfig['remote "origin"'] ? gitConfig['remote "origin"'].url : ''
+  const url = gitConfig['remote "origin"'] ? gitConfig['remote "origin"'].url : ''
+  const ret = {
+    repository: {
+      type: 'git',
+      url
+    }
+  }
+  try {
+    const repo = url.match(/github\.com[:\/](.+)/i)[1].replace(/\.git$/, '')
+    if (url.includes('github.com')) {
+      ret.bugs = {
+        url: `https://github.com/${repo}/issues`
+      }
+      ret.homepage = `https://github.com/${repo}#readme`
+    }
+  } finally {
+    return ret
   }
 }
