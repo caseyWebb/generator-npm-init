@@ -190,18 +190,20 @@ module.exports = class Generator extends YeomanGenerator {
   }
 
   writing() {
-    const junk = [
-      'env',
-      'resolved',
-      'namespace',
-      'argv',
-      'repo',
-      'test',
-      '_'
+    const validProps = [
+      'name',
+      'version',
+      'description',
+      'main',
+      'repository',
+      'keywords',
+      'author',
+      'license',
+      'scripts'
     ]
 
-    junk.forEach((e) => delete this.package[e])
+    const cleanPkg = _.reduce(validProps, (accum, k) => _.extend(accum, { [k]: this.package[k] }), {})
 
-    this.fs.writeJSON(this.destinationPath('package.json'), this.package)
+    this.fs.writeJSON(this.destinationPath('package.json'), cleanPkg)
   }
 }
