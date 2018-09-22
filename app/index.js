@@ -41,7 +41,7 @@ module.exports = class Generator extends YeomanGenerator {
   }
 
   async prompting() {
-    const prompts = [
+    let prompts = [
       ['name', 'package name'],
       ['version'],
       ['description'],
@@ -60,40 +60,65 @@ module.exports = class Generator extends YeomanGenerator {
         default: defaultV
       }))
 
-    const res = await this.prompt(prompts)
+    while (true) {
+      const res = await this.prompt(prompts)
 
-    if (res.test) {
-      res.scripts = { test: res.test }
-      delete res.test
-    }
-    if (res.keywords && !res.keywords.match(/^\w?$/)) {
-      res.keywords = res.keywords.split(' ')
-    }
-    if (res.repo) {
-      res.repository = res.repo
-      delete res.repo
-    }
+      if (res.test) {
+        res.scripts = { test: res.test }
+        delete res.test
+      }
+      if (res.keywords && !res.keywords.match(/^\w?$/)) {
+        res.keywords = res.keywords.split(' ')
+      }
+      if (res.repo) {
+        res.repository = res.repo
+        delete res.repo
+      }
 
-    _.merge(this.package, res)
+      let pkg = _.merge({}, this.package, res)
 
-    // strip extraneous props
-    this.package = _.reduce(
-      [
-        'name',
-        'version',
-        'description',
-        'main',
-        'repository',
-        'bugs',
-        'homepage',
-        'keywords',
-        'author',
-        'license',
-        'scripts'
-      ],
-      (accum, k) => _.extend(accum, { [k]: this.package[k] }),
-      {}
-    )
+      // strip extraneous props
+      pkg = _.reduce(
+        [
+          'name',
+          'version',
+          'description',
+          'main',
+          'repository',
+          'bugs',
+          'homepage',
+          'keywords',
+          'author',
+          'license',
+          'scripts'
+        ],
+        (accum, k) => _.extend(accum, { [k]: pkg[k] }),
+        {}
+      )
+
+      const { confirmed } = await this.prompt([{
+        type: 'confirm',
+        name: 'confirmed',
+        message: JSON.stringify(pkg, null, 2) + '\n\nIs this OK?',
+        default: true
+      }])
+
+      if (confirmed) {
+        this.package = pkg
+        break
+      } else {
+        // set defaults to the values passed, so if only one field was messed up
+        // the user doesn't have to retype the whole thing
+        prompts.forEach((p) => {
+          // keywords
+          if (Array.isArray(pkg[p.name])) {
+            p.default = pkg[p.name].join(' ')
+          } else {
+            p.default = pkg[p.name]
+          }
+        })
+      }
+    }
   }
 
   writing() {
