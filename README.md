@@ -6,7 +6,6 @@
 [![Dependency Status][david-dm-shield]][david-dm]
 [![Peer Dependency Status][david-dm-peer-shield]][david-dm-peer]
 [![Dev Dependency Status][david-dm-dev-shield]][david-dm-dev]
-[![Greenkeeper][greenkeeper-shield]][greenkeeper]
 [![Downloads][npm-stats-shield]][npm-stats]
 
 Yeoman generator implementation of `npm init`. Useful for composition.
@@ -54,8 +53,6 @@ this.composeWith(require.resolve('generator-npm-init/app')/*, options*/)
 [travis-ci-shield]: https://img.shields.io/travis/caseyWebb/generator-npm-init/master.svg
 [codecov]: https://codecov.io/gh/caseyWebb/generator-npm-init
 [codecov-shield]: https://img.shields.io/codecov/c/github/caseyWebb/generator-npm-init.svg
-[greenkeeper]: https://greenkeeper.io/
-[greenkeeper-shield]: https://badges.greenkeeper.io/caseyWebb/generator-npm-init.svg
 [david-dm]: https://david-dm.org/caseyWebb/generator-npm-init
 [david-dm-shield]: https://david-dm.org/caseyWebb/generator-npm-init/status.svg
 [david-dm-peer]: https://david-dm.org/caseyWebb/generator-npm-init&type=peer
