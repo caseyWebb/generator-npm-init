@@ -1,23 +1,17 @@
 language: node_js
 node_js:
 - stable
-addons:
-  firefox: latest
 branches:
   only:
   - master
-  - "/^greenkeeper/.*$/"
 cache:
   yarn: true
   directories:
   - node_modules
 install:
 - yarn install --ignore-engines
-before_script:
-- npx -p greenkeeper-lockfile@1 greenkeeper-lockfile-update
 after_script:
 - npx codecov
-- npx -p greenkeeper-lockfile@1 greenkeeper-lockfile-upload
 deploy:
   provider: pages
   skip-cleanup: true
