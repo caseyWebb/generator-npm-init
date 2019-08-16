@@ -1,4 +1,7 @@
-<a name="1.5.0"></a>
+## [1.5.1](https://github.com/caseyWebb/generator-npm-init/compare/v1.5.0...v1.5.1) (2019-08-16)
+
+
+
 # [1.5.0](https://github.com/caseyWebb/generator-npm-init/compare/v1.4.1...v1.5.0) (2018-09-22)
 
 
@@ -15,7 +18,6 @@
 
 
 
-<a name="1.4.1"></a>
 ## [1.4.1](https://github.com/caseyWebb/generator-npm-init/compare/v1.4.0...v1.4.1) (2018-07-20)
 
 
@@ -25,52 +27,42 @@
 
 
 
-<a name="1.4.0"></a>
 # [1.4.0](https://github.com/caseyWebb/generator-npm-init/compare/v1.3.2...v1.4.0) (2017-08-04)
 
 
 
-<a name="1.3.2"></a>
 ## [1.3.2](https://github.com/caseyWebb/generator-npm-init/compare/v1.3.1...v1.3.2) (2017-02-24)
 
 
 
-<a name="1.3.1"></a>
 ## [1.3.1](https://github.com/caseyWebb/generator-npm-init/compare/v1.3.0...v1.3.1) (2016-12-29)
 
 
 
-<a name="1.3.0"></a>
 # [1.3.0](https://github.com/caseyWebb/generator-npm-init/compare/v1.2.3...v1.3.0) (2016-10-27)
 
 
 
-<a name="1.2.3"></a>
 ## [1.2.3](https://github.com/caseyWebb/generator-npm-init/compare/v1.2.2...v1.2.3) (2016-09-19)
 
 
 
-<a name="1.2.2"></a>
 ## [1.2.2](https://github.com/caseyWebb/generator-npm-init/compare/v1.2.1...v1.2.2) (2016-06-05)
 
 
 
-<a name="1.2.1"></a>
 ## [1.2.1](https://github.com/caseyWebb/generator-npm-init/compare/v1.2.0...v1.2.1) (2016-05-09)
 
 
 
-<a name="1.2.0"></a>
 # [1.2.0](https://github.com/caseyWebb/generator-npm-init/compare/v1.1.0...v1.2.0) (2016-01-08)
 
 
 
-<a name="1.1.0"></a>
 # [1.1.0](https://github.com/caseyWebb/generator-npm-init/compare/v1.0.1...v1.1.0) (2016-01-08)
 
 
 
-<a name="1.0.1"></a>
 ## 1.0.1 (2016-01-08)
 
 
