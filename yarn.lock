@@ -1620,21 +1620,21 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.0.0.tgz#f429a53bde9fc7660e6353910fd996d6284d3c25"
-  integrity sha512-vDrcCFE3+2ixNT5H83g28bO/uYAwibJxerXPj+E7op4qzBCsAV36QfvdAyVOoNxKAH2Os/e01T/2x++V0LPukA==
+eslint-config-prettier@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.1.0.tgz#e6f678ba367fbd1273998d5510f76f004e9dce7b"
+  integrity sha512-k9fny9sPjIBQ2ftFTesJV21Rg4R/7a7t7LCtZVrYQiHEp8Nnuk3EGaDmsKSAnsPj0BYcgB2zxzHa2NTkIxcOLg==
   dependencies:
     get-stdin "^6.0.0"
 
 eslint-config-profiscience@^4.0.7:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/eslint-config-profiscience/-/eslint-config-profiscience-4.0.7.tgz#2596eb28cc9fc5c2370ca67a5ddb7a8f50bc6a8f"
-  integrity sha512-tqqfqthnHDfk43bCpEIoMu9lJBUDOifJEmRey3zfEsjOKat0W2yLCZBwx+yJoWNl+TGum8K/sW7CCAHWn7/F7A==
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/eslint-config-profiscience/-/eslint-config-profiscience-4.0.8.tgz#615c2a6a00ef410f98f00e68398525e919b7b0e0"
+  integrity sha512-h/JrQYjHZA1330QC6oHME6fFjVtPPoXUzvEZKoCFotwBwfhXa+yc+sYoZ/zEkOV50liSKVAUWAai8Lbr6ATarA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^1.10.2"
     "@typescript-eslint/parser" "^1.10.2"
-    eslint-config-prettier "^6.0.0"
+    eslint-config-prettier "^6.1.0"
 
 eslint-scope@^4.0.0:
   version "4.0.3"
