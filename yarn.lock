@@ -1632,9 +1632,9 @@ eslint-config-prettier@^6.4.0:
     get-stdin "^6.0.0"
 
 eslint-config-profiscience@^4.0.7:
-  version "4.1.9"
-  resolved "https://registry.yarnpkg.com/eslint-config-profiscience/-/eslint-config-profiscience-4.1.9.tgz#5d634ea60a9045a488c71559260b0d9bccf13cb7"
-  integrity sha512-kFcFlD1kIe0n2CM6SLDYVmv49ih5lZzFPXr2uRm96gatqd2cojnJIhFEqI+6jHd4MmoI6w0O1oytYFE4E6gq/g==
+  version "4.1.10"
+  resolved "https://registry.yarnpkg.com/eslint-config-profiscience/-/eslint-config-profiscience-4.1.10.tgz#0d37b08853c43d412d85af8f08c9d665ebd84d17"
+  integrity sha512-plK1wVrmgnwEI7esxL65u0Q40l4nSTH886GMqoqfK+KkZVij/jI+WRJJ8QGWYDctJDoIS/R23KuPFdtJl5JCUA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.5.0"
     "@typescript-eslint/parser" "^2.5.0"
