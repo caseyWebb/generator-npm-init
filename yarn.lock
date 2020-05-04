@@ -2609,13 +2609,6 @@ graceful-fs@^4.2.4:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
-grouped-queue@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-1.0.0.tgz#5bdb97934a9a17b19626ff3cc23c103f2622ef49"
-  integrity sha512-XslfWrAGCYovQjveHODR0hllUrsn3UtvPFTkamHbgVHmkUA6eCIDmw3JDWVLJvuntTvYjwaPGamlyzK4/HAEOA==
-  dependencies:
-    lodash "^4.17.15"
-
 grouped-queue@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-1.1.0.tgz#63e3f9ca90af952269d1d40879e41221eacc74cb"
@@ -2808,25 +2801,6 @@ ini@^1.3.2, ini@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
-
-inquirer@^6.0.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-6.5.1.tgz#8bfb7a5ac02dac6ff641ac4c5ff17da112fcdb42"
-  integrity sha512-uxNHBeQhRXIoHWTSNYUFhQVrHYFThIt6IVo2fFmSe8aBwdR3/w6b58hJpiL/fMukFkvGzjg+hSxFtwvVmKZmXw==
-  dependencies:
-    ansi-escapes "^4.2.1"
-    chalk "^2.4.2"
-    cli-cursor "^3.1.0"
-    cli-width "^2.0.0"
-    external-editor "^3.0.3"
-    figures "^3.0.0"
-    lodash "^4.17.15"
-    mute-stream "0.0.8"
-    run-async "^2.2.0"
-    rxjs "^6.4.0"
-    string-width "^4.1.0"
-    strip-ansi "^5.1.0"
-    through "^2.3.6"
 
 inquirer@^7.0.0, inquirer@^7.1.0:
   version "7.1.0"
@@ -4944,19 +4918,12 @@ rsvp@^4.8.4:
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
   integrity sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==
 
-run-async@^2.0.0, run-async@^2.2.0, run-async@^2.4.0:
+run-async@^2.0.0, run-async@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.0.tgz#e59054a5b86876cfae07f431d18cbaddc594f1e8"
   integrity sha512-xJTbh/d7Lm7SBhc1tNvTpeCHaEzoyxPrqNlvSdMfBTYwaY++UJFyXUOxAtsRUXjlqOfj8luNaR9vjCh4KeV+pg==
   dependencies:
     is-promise "^2.1.0"
-
-rxjs@^6.4.0:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
-  integrity sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
-  dependencies:
-    tslib "^1.9.0"
 
 rxjs@^6.5.3:
   version "6.5.4"
@@ -6011,28 +5978,7 @@ yeoman-assert@^3.0.0:
   resolved "https://registry.yarnpkg.com/yeoman-assert/-/yeoman-assert-3.1.1.tgz#9f6fa0ecba7dd007c40f579668cb5dda18c79343"
   integrity sha512-bCuLb/j/WzpvrJZCTdJJLFzm7KK8IYQJ3+dF9dYtNs2CUYyezFJDuULiZ2neM4eqjf45GN1KH/MzCTT3i90wUQ==
 
-yeoman-environment@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.8.1.tgz#76c52fcccf26bcbd7ded35d9e22a9f3f1394d241"
-  integrity sha512-MV6yeJfnSsZBv/VuWvw82bN6hF6KIXRUwhEPaO+RHJAWeNCQAF+iYfBNsJOo4tx5Puch300h+DF9QZceKkbzQg==
-  dependencies:
-    chalk "^2.4.1"
-    cross-spawn "^6.0.5"
-    debug "^3.1.0"
-    diff "^3.5.0"
-    escape-string-regexp "^1.0.2"
-    globby "^8.0.1"
-    grouped-queue "^1.0.0"
-    inquirer "^6.0.0"
-    is-scoped "^1.0.0"
-    lodash "^4.17.10"
-    log-symbols "^2.2.0"
-    mem-fs "^1.1.0"
-    strip-ansi "^4.0.0"
-    text-table "^0.2.0"
-    untildify "^3.0.3"
-
-yeoman-environment@^2.9.5:
+yeoman-environment@^2.8.1, yeoman-environment@^2.9.5:
   version "2.9.6"
   resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.9.6.tgz#3defd8a1c66fd44df0c8ee9603ac44ecada0a370"
   integrity sha512-olp9jFDfF35F6YbE2PvWw8idX+JUW9Wf5bY9OYntFdyl4YGnmxJVO6VokYwK+ZoC3asciyO7tteoxTyYG4AxXA==
@@ -6091,9 +6037,9 @@ yeoman-generator@^4.0.1, yeoman-generator@^4.7.2, yeoman-generator@^4.8.2:
     yeoman-environment "^2.9.5"
 
 yeoman-test@^2.0.0:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/yeoman-test/-/yeoman-test-2.4.1.tgz#29091d6e2c9cdf809f803315e13aa84d981f3c17"
-  integrity sha512-1tcNVP7I8wizHV9eN7iZhDOVfFm6GHOaAfK50c1E1adbe9lpiUZ57wdc7q5GVB4QheWP98maEsDcswLWU2Xv9A==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/yeoman-test/-/yeoman-test-2.5.0.tgz#73b31f6114b5e17864e8413910371a07611b2807"
+  integrity sha512-y0/cfUn86yOvCupjQ96AN8tQzC3ttUsQhJswZB06mn8Or0f+x95d2j7UC+z6K9xL7FbEGekuTQzZLg5+GG5nkw==
   dependencies:
     inquirer "^7.1.0"
     lodash "^4.17.15"
