@@ -7269,9 +7269,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.510.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.510.0.tgz#b08be9b774b963d0d02ca2ba655e1f0596a85917"
-  integrity sha512-S2sH3n02GNAsKQyyyEpWU5OJpCvSBLzSs/iSWiJv9V/zYNKHMbDOLYtQQMLQPwvZD7XzM+68XrfIORkiZ7roUA==
+  version "1.511.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.511.0.tgz#e67e050e2171cbb0665aa7a48e406f667c320175"
+  integrity sha512-3fOXci3Qitz3cLC73S99Tp3r0TeqLkNGduY733vQaOTt40RMH1PgjuOJPVPNPgiBxPgmqNlxfDl/MwNK2zpT0g==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -7313,6 +7313,7 @@ snyk@^1.316.1:
     promise-queue "^2.2.5"
     proxy-agent "^3.1.1"
     proxy-from-env "^1.0.0"
+    rimraf "^2.6.3"
     semver "^6.0.0"
     snyk-config "4.0.0"
     snyk-cpp-plugin "2.2.1"
