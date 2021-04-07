@@ -791,10 +791,10 @@
     micromatch "^4.0.2"
     picomatch "^2.2.1"
 
-"@snyk/fix@1.518.0":
-  version "1.518.0"
-  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.518.0.tgz#8af97a17da737739b1f31fe2d2129c99fcb574ed"
-  integrity sha512-Cwh0wU8SxZgx1+qRgcGkMctNx9F6UCdUJYcCvKaYJNDEYQwpQat4nsLZsJeODYNx7Byh0ZnPrqakUck4qFrPvA==
+"@snyk/fix@1.527.0":
+  version "1.527.0"
+  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.527.0.tgz#4e460978dea9acb3efe9f4840d403581ecac58fa"
+  integrity sha512-GNqGGj2jUd9n2PMrQO9hheM3GgvyxbOOGyZt4FJhxLiQWGbRdP2GfrUThX5Gq+SkvrS7CbnDxS4Zg0JezHvIbw==
   dependencies:
     "@snyk/dep-graph" "^1.21.0"
     chalk "4.1.0"
@@ -7547,15 +7547,15 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.526.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.526.0.tgz#7aab21c3a25eb56724ffc62667dad13188521360"
-  integrity sha512-HVJFcE/eA0J4uYubQ2t1RYQdXOKfQg4BbeTt8nKQisT92vWASX+BWqhPuiYQNpcUgca7x3V33LYf/bDJtXAbJQ==
+  version "1.527.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.527.0.tgz#7431d563c387f9881adc524538973bfc9af47214"
+  integrity sha512-tQXPvcFxYSBeCwqivcB49ICQaToa6xic6SKXc0T6eCjMDd4vN4LMfFzPfEqbIxZHQl9jjgMjdDjDcyOMnZwZnA==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
     "@snyk/code-client" "3.4.0"
     "@snyk/dep-graph" "^1.27.1"
-    "@snyk/fix" "1.518.0"
+    "@snyk/fix" "1.527.0"
     "@snyk/gemfile" "1.2.0"
     "@snyk/graphlib" "^2.1.9-patch.3"
     "@snyk/inquirer" "^7.3.3-patch"
