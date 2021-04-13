@@ -948,15 +948,16 @@
     tar-stream "^2.1.2"
     tmp "^0.1.0"
 
-"@snyk/snyk-hex-plugin@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.0.1.tgz#108b27382af91a7984abe34b1778b71aadd76b62"
-  integrity sha512-z6tmxLOdLlwdTuDI+Di5M44RnkKQU1yS9CKANfJLIxwqg6HP45oxEqwSqIRmHHJoD/xS//09kH1ORgKR9BslKg==
+"@snyk/snyk-hex-plugin@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.1.1.tgz#7b399852aaf3779f757a2400dcf59adc87f47f0a"
+  integrity sha512-NXgslDo6qSvsKy2cR3Yoo/Z6A3Svae9a96j+0OUnvcZX7i6JeODreqXFD1k0vPM2JnL1G7qcdblPxz7M7ZAZmQ==
   dependencies:
     "@snyk/dep-graph" "^1.28.0"
     "@snyk/mix-parser" "^1.1.1"
     debug "^4.3.1"
     tslib "^2.0.0"
+    upath "2.0.1"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -7547,9 +7548,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.532.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.532.0.tgz#0c55fc9142a541253b481ab2a53064ac7c43f4ff"
-  integrity sha512-k9DEgZ9Pn5aVAwqKRW5AXIGSw1QEqY8IHLXeeJgPMml8l+DfEWKoFXUoiAn1sKg7gVhNjOCK6VHNcWI6dX3wzQ==
+  version "1.534.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.534.0.tgz#d5010b6aac87bb5d8535b2bfa1163ab404598e6e"
+  integrity sha512-sljEuFhgVy63yRrSiIAtKR8cmx2szIL2NiOwpswHEyw9insYTqqcgfFTxUMB1NLEq2Lh7LmkOMStk11qekVRcA==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -7560,7 +7561,7 @@ snyk@^1.316.1:
     "@snyk/graphlib" "^2.1.9-patch.3"
     "@snyk/inquirer" "^7.3.3-patch"
     "@snyk/snyk-cocoapods-plugin" "2.5.2"
-    "@snyk/snyk-hex-plugin" "1.0.1"
+    "@snyk/snyk-hex-plugin" "1.1.1"
     abbrev "^1.1.1"
     ansi-escapes "3.2.0"
     chalk "^2.4.2"
@@ -8424,6 +8425,11 @@ unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
   integrity sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
+
+upath@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
+  integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
 
 update-notifier@^4.1.0:
   version "4.1.0"
