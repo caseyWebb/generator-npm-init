@@ -721,10 +721,10 @@
     js-yaml "^3.13.1"
     tslib "^1.10.0"
 
-"@snyk/code-client@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.4.0.tgz#7741abef6dcf5dfc50a1a0538918972360c5a1e7"
-  integrity sha512-RY2IftAiWB7tp36Mcq7WiEwqoD8A/mqrD6N7oDWTxBOIqsH0t4djo/UibiWDJotaffO9aXXndOf3iZ/kTt+Rdg==
+"@snyk/code-client@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.4.1.tgz#b9d025897cd586e0aef903162ac0407d0bffc3cd"
+  integrity sha512-XJ7tUdX1iQyzN/BmHac7p+Oyw1SyTcqSkCNExwBJxyQdlnUAKK6QKIWLXS81tTpZ79FgCdT+0fdS0AjsyS99eA==
   dependencies:
     "@deepcode/dcignore" "^1.0.2"
     "@snyk/fast-glob" "^3.2.6-patch"
@@ -800,15 +800,14 @@
     micromatch "^4.0.2"
     picomatch "^2.2.1"
 
-"@snyk/fix@1.539.0":
-  version "1.539.0"
-  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.539.0.tgz#b23c469b21cd6faf355a1e899068e91827e29075"
-  integrity sha512-oZ3BdRgbkyp/3P2DyLsz11n5xbRzvhIySDv9Qg0UWyjByh9SbR70CCqa7VOCXuTCRpFXIZf15GYNpNLBdOJ2Rw==
+"@snyk/fix@1.554.0":
+  version "1.554.0"
+  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.554.0.tgz#7ae786882e0ffea5e7f10d0b41e3d593b65555c4"
+  integrity sha512-q2eRVStgspPeI2wZ2EQGLpiWZMRg7o+4tsCk6m/kHZgQGDN4Bb7L3xslFW3OgF0+ZksYSaHl2cW2HmGiLRaYcA==
   dependencies:
     "@snyk/dep-graph" "^1.21.0"
     chalk "4.1.0"
     debug "^4.3.1"
-    micromatch "4.0.2"
     ora "5.3.0"
     p-map "^4.0.0"
     strip-ansi "6.0.0"
@@ -957,14 +956,15 @@
     tar-stream "^2.1.2"
     tmp "^0.1.0"
 
-"@snyk/snyk-hex-plugin@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.1.1.tgz#7b399852aaf3779f757a2400dcf59adc87f47f0a"
-  integrity sha512-NXgslDo6qSvsKy2cR3Yoo/Z6A3Svae9a96j+0OUnvcZX7i6JeODreqXFD1k0vPM2JnL1G7qcdblPxz7M7ZAZmQ==
+"@snyk/snyk-hex-plugin@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.1.4.tgz#4a5b1684cecc1a557ec1a9f5f8646683ae89f0da"
+  integrity sha512-kLfFGckSmyKe667UGPyWzR/H7/Trkt4fD8O/ktElOx1zWgmivpLm0Symb4RCfEmz9irWv+N6zIKRrfSNdytcPQ==
   dependencies:
     "@snyk/dep-graph" "^1.28.0"
     "@snyk/mix-parser" "^1.1.1"
     debug "^4.3.1"
+    tmp "^0.0.33"
     tslib "^2.0.0"
     upath "2.0.1"
 
@@ -7350,10 +7350,10 @@ snyk-go-plugin@1.17.0:
     tmp "0.2.1"
     tslib "^1.10.0"
 
-snyk-gradle-plugin@3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.14.0.tgz#26c9833c97ef50e83b022b2e3077a9056f8674e1"
-  integrity sha512-2A8ifM91TyzSx/U2fYvHXbaCRVsEx60hGFQjbSH9Hl9AokxEzMi2qti7wsObs1jUX2m198D1mdXu4k/Y1jWxXg==
+snyk-gradle-plugin@3.14.2:
+  version "3.14.2"
+  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.14.2.tgz#898b051f679e681b6d859f0ca84a500ac028af7d"
+  integrity sha512-l/nivKDZz7e2wymrwP6g2WQD8qgaYeE22SnbZrfIpwGolif81U28A9FsRedwkxKyB/shrM0vGEoD3c3zI8NLBw==
   dependencies:
     "@snyk/cli-interface" "2.11.0"
     "@snyk/dep-graph" "^1.28.0"
@@ -7427,10 +7427,10 @@ snyk-nodejs-lockfile-parser@1.32.0:
     uuid "^8.3.0"
     yaml "^1.9.2"
 
-snyk-nuget-plugin@1.21.0:
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.21.0.tgz#d9d3976cf0b4572ae97c47f758f84fc43040216f"
-  integrity sha512-c/JYF3sZzMN/lYz171zrEkVcPqDVcUTVgKIKHiL8nhhuFKxZQ1gzqOgk+lnfN31TLoTNQsZ3DhW/WY+4zEALvw==
+snyk-nuget-plugin@1.21.1:
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.21.1.tgz#a79bbc65456823a1148119873226afb0e4907ec8"
+  integrity sha512-nRtedIvrow5ODqOKkQWolKrxn8ZoNL3iNJGuW0jNhwv+/9K0XE1UORM5F1ENAsd+nzCSO/kiYAXCc5CNK8HWEw==
   dependencies:
     debug "^4.1.1"
     dotnet-deps-parser "5.0.0"
@@ -7557,21 +7557,21 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.542.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.542.0.tgz#774267cf32083e0606e47eca63e518af5d6669e0"
-  integrity sha512-u4uUWDgk4cJPHXeUwwSQsrs4PGkat95JNEnlE5vkPiHyiO/BGPWvHilloJevHL1Qtr2z/P3RHG6ze3CPxsJlnA==
+  version "1.561.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.561.0.tgz#cade48ec2d2ec07a6f156c8847ca9dc51652bce1"
+  integrity sha512-aPdamwTm+WDc4vEVR3l7ZQ83PUFsPhSWDP/D+tcbsmn+QPpZ4sLAOynOMsk7b9FZgxMigVfQCvKOUNkr3WuImg==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
     "@snyk/cloud-config-parser" "^1.9.2"
-    "@snyk/code-client" "3.4.0"
+    "@snyk/code-client" "3.4.1"
     "@snyk/dep-graph" "^1.27.1"
-    "@snyk/fix" "1.539.0"
+    "@snyk/fix" "1.554.0"
     "@snyk/gemfile" "1.2.0"
     "@snyk/graphlib" "^2.1.9-patch.3"
     "@snyk/inquirer" "^7.3.3-patch"
     "@snyk/snyk-cocoapods-plugin" "2.5.2"
-    "@snyk/snyk-hex-plugin" "1.1.1"
+    "@snyk/snyk-hex-plugin" "1.1.4"
     abbrev "^1.1.1"
     ansi-escapes "3.2.0"
     chalk "^2.4.2"
@@ -7611,11 +7611,11 @@ snyk@^1.316.1:
     snyk-cpp-plugin "2.2.1"
     snyk-docker-plugin "4.19.3"
     snyk-go-plugin "1.17.0"
-    snyk-gradle-plugin "3.14.0"
+    snyk-gradle-plugin "3.14.2"
     snyk-module "3.1.0"
     snyk-mvn-plugin "2.25.3"
     snyk-nodejs-lockfile-parser "1.32.0"
-    snyk-nuget-plugin "1.21.0"
+    snyk-nuget-plugin "1.21.1"
     snyk-php-plugin "1.9.2"
     snyk-policy "1.19.0"
     snyk-python-plugin "1.19.8"
