@@ -721,10 +721,10 @@
     js-yaml "^3.13.1"
     tslib "^1.10.0"
 
-"@snyk/code-client@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.4.0.tgz#7741abef6dcf5dfc50a1a0538918972360c5a1e7"
-  integrity sha512-RY2IftAiWB7tp36Mcq7WiEwqoD8A/mqrD6N7oDWTxBOIqsH0t4djo/UibiWDJotaffO9aXXndOf3iZ/kTt+Rdg==
+"@snyk/code-client@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.4.1.tgz#b9d025897cd586e0aef903162ac0407d0bffc3cd"
+  integrity sha512-XJ7tUdX1iQyzN/BmHac7p+Oyw1SyTcqSkCNExwBJxyQdlnUAKK6QKIWLXS81tTpZ79FgCdT+0fdS0AjsyS99eA==
   dependencies:
     "@deepcode/dcignore" "^1.0.2"
     "@snyk/fast-glob" "^3.2.6-patch"
@@ -800,10 +800,10 @@
     micromatch "^4.0.2"
     picomatch "^2.2.1"
 
-"@snyk/fix@1.539.0":
-  version "1.539.0"
-  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.539.0.tgz#b23c469b21cd6faf355a1e899068e91827e29075"
-  integrity sha512-oZ3BdRgbkyp/3P2DyLsz11n5xbRzvhIySDv9Qg0UWyjByh9SbR70CCqa7VOCXuTCRpFXIZf15GYNpNLBdOJ2Rw==
+"@snyk/fix@1.547.0":
+  version "1.547.0"
+  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.547.0.tgz#08797c34887eca58c9dfe387042abdbc1937a8ad"
+  integrity sha512-ANTkn8PHsmPelQ8W8aiS+R3JBzUr0fjcHT67eTvr2a0h51qzzgBFEwhd8GH1Wuo0Nmvm3bsKkk5DxkxTtQWPtw==
   dependencies:
     "@snyk/dep-graph" "^1.21.0"
     chalk "4.1.0"
@@ -957,14 +957,15 @@
     tar-stream "^2.1.2"
     tmp "^0.1.0"
 
-"@snyk/snyk-hex-plugin@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.1.1.tgz#7b399852aaf3779f757a2400dcf59adc87f47f0a"
-  integrity sha512-NXgslDo6qSvsKy2cR3Yoo/Z6A3Svae9a96j+0OUnvcZX7i6JeODreqXFD1k0vPM2JnL1G7qcdblPxz7M7ZAZmQ==
+"@snyk/snyk-hex-plugin@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@snyk/snyk-hex-plugin/-/snyk-hex-plugin-1.1.3.tgz#05667d8172936caf91006f4d964066094f53e4d6"
+  integrity sha512-z0RsmWMJ0Vbvxca72jHVKUOMTbdMNw4Ofvu1YkM9RCpxtt9ipM8sBAeS1KkD9gevG4Ik3wHztbOB29Jka0vT9w==
   dependencies:
     "@snyk/dep-graph" "^1.28.0"
     "@snyk/mix-parser" "^1.1.1"
     debug "^4.3.1"
+    tmp "^0.0.33"
     tslib "^2.0.0"
     upath "2.0.1"
 
@@ -7350,10 +7351,10 @@ snyk-go-plugin@1.17.0:
     tmp "0.2.1"
     tslib "^1.10.0"
 
-snyk-gradle-plugin@3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.14.0.tgz#26c9833c97ef50e83b022b2e3077a9056f8674e1"
-  integrity sha512-2A8ifM91TyzSx/U2fYvHXbaCRVsEx60hGFQjbSH9Hl9AokxEzMi2qti7wsObs1jUX2m198D1mdXu4k/Y1jWxXg==
+snyk-gradle-plugin@3.14.2:
+  version "3.14.2"
+  resolved "https://registry.yarnpkg.com/snyk-gradle-plugin/-/snyk-gradle-plugin-3.14.2.tgz#898b051f679e681b6d859f0ca84a500ac028af7d"
+  integrity sha512-l/nivKDZz7e2wymrwP6g2WQD8qgaYeE22SnbZrfIpwGolif81U28A9FsRedwkxKyB/shrM0vGEoD3c3zI8NLBw==
   dependencies:
     "@snyk/cli-interface" "2.11.0"
     "@snyk/dep-graph" "^1.28.0"
@@ -7557,21 +7558,21 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.542.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.542.0.tgz#774267cf32083e0606e47eca63e518af5d6669e0"
-  integrity sha512-u4uUWDgk4cJPHXeUwwSQsrs4PGkat95JNEnlE5vkPiHyiO/BGPWvHilloJevHL1Qtr2z/P3RHG6ze3CPxsJlnA==
+  version "1.557.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.557.0.tgz#537e06f68483494a1ecedf0d040eef5a9cd16e49"
+  integrity sha512-Rd8PcUVGLkSoGVKfA5qYtZL+9pbnr//vg9iV/sjjW15oZOPN0EefMnexSAqEUoCCqWBId4zdQLJ0pwaMns1uFg==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
     "@snyk/cloud-config-parser" "^1.9.2"
-    "@snyk/code-client" "3.4.0"
+    "@snyk/code-client" "3.4.1"
     "@snyk/dep-graph" "^1.27.1"
-    "@snyk/fix" "1.539.0"
+    "@snyk/fix" "1.547.0"
     "@snyk/gemfile" "1.2.0"
     "@snyk/graphlib" "^2.1.9-patch.3"
     "@snyk/inquirer" "^7.3.3-patch"
     "@snyk/snyk-cocoapods-plugin" "2.5.2"
-    "@snyk/snyk-hex-plugin" "1.1.1"
+    "@snyk/snyk-hex-plugin" "1.1.3"
     abbrev "^1.1.1"
     ansi-escapes "3.2.0"
     chalk "^2.4.2"
@@ -7611,7 +7612,7 @@ snyk@^1.316.1:
     snyk-cpp-plugin "2.2.1"
     snyk-docker-plugin "4.19.3"
     snyk-go-plugin "1.17.0"
-    snyk-gradle-plugin "3.14.0"
+    snyk-gradle-plugin "3.14.2"
     snyk-module "3.1.0"
     snyk-mvn-plugin "2.25.3"
     snyk-nodejs-lockfile-parser "1.32.0"
