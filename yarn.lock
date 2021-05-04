@@ -7292,10 +7292,10 @@ snyk-cpp-plugin@2.2.1:
     hosted-git-info "^3.0.7"
     tslib "^2.0.0"
 
-snyk-docker-plugin@4.20.1:
-  version "4.20.1"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-4.20.1.tgz#1f9cc5d0cf02055abde63cdfa6e2e20556fdbb57"
-  integrity sha512-qFExaxdu9bNgvkv5TCE/AOyCCOWjjFRuX3Dhf0TWbpj+TtzgpZj2nmi4AG3XiOBn1cQUZ7pCSHoy7bNJeyUBww==
+snyk-docker-plugin@4.20.2:
+  version "4.20.2"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-4.20.2.tgz#6375eb262ae85cdcbccad5088b1836c686ab6462"
+  integrity sha512-cxRU6lNybAJgOs1RPDTk3fJh7rS0BkXSAw/8/GFGTeJlQ+dNhEnCWni7PKmaZT9phFNOqLQcDd8+oOZZB5UQnw==
   dependencies:
     "@snyk/dep-graph" "^1.28.0"
     "@snyk/rpm-parser" "^2.0.0"
@@ -7543,9 +7543,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.578.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.578.0.tgz#a7838ded72cd872f7d8a6a308d7c8129c0366682"
-  integrity sha512-JUG9bRWZXueYmUAvtbdNHHu5ZKx/7ggRAJ7pu8/WG+e8ICpaMLlhkQjupPMDOPv1+oBuleIk2R4hFIL3EA2cOA==
+  version "1.579.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.579.0.tgz#915545208d45cb3dfc3f3afd0896d644a3574034"
+  integrity sha512-QlfHIt/rWdnKoXWGx0Wi7ECuc9+ahy2SQG508K1DP9BuR0Wz9n8Uyl5YTFopAAumSCb/daGsAiAbReczb/NmdQ==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -7594,7 +7594,7 @@ snyk@^1.316.1:
     semver "^6.0.0"
     snyk-config "4.0.0"
     snyk-cpp-plugin "2.2.1"
-    snyk-docker-plugin "4.20.1"
+    snyk-docker-plugin "4.20.2"
     snyk-go-plugin "1.17.0"
     snyk-gradle-plugin "3.14.4"
     snyk-module "3.1.0"
