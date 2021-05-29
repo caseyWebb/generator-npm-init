@@ -29,7 +29,7 @@
     "conventional-changelog-cli": "^2.0.5",
     "eslint": "^6.1.0",
     "eslint-config-profiscience": "^5.0.2",
-    "jest": "^26.0.1",
+    "jest": "^27.0.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^3.0.0"
   },
