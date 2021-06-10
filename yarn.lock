@@ -7380,10 +7380,10 @@ snyk-module@3.1.0, snyk-module@^3.0.0, snyk-module@^3.1.0:
     debug "^4.1.1"
     hosted-git-info "^3.0.4"
 
-snyk-mvn-plugin@2.26.0:
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.26.0.tgz#a4ce4aecf6b6f20f0b9797f2a7680982fa1fe5b5"
-  integrity sha512-LxYNWXPJxcwbkCK+vE7t437RttEDcbsS2KJJYzFtrr6u7g26c51u9aMHYPCDAEmwjI1A28zSrh7Wp45JW4YOqg==
+snyk-mvn-plugin@2.26.1:
+  version "2.26.1"
+  resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-2.26.1.tgz#4ada6a20d4adf8db97d11ee9f7bd6f54d39fc06b"
+  integrity sha512-DCs53aRT/uK2e1jXzeVG2d+Ll0bmY/YHL+jEYaWJko8XwGoVwqCrVOkRyzXd2KOZUk3gpD6MaxIrBWsc8RJzRA==
   dependencies:
     "@snyk/cli-interface" "2.11.0"
     "@snyk/dep-graph" "^1.23.1"
@@ -7566,9 +7566,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.627.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.627.0.tgz#13f64f5eb961da723cc47c67d53db96d5a6d1763"
-  integrity sha512-2W86xWyNPjNN8guercCEa8L2x08EoVz4qxoCskd+X1tDJG8EZYHJD0O09xm5JwOme6vL60bT9qah5Bz+ttXJvQ==
+  version "1.628.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.628.0.tgz#b49889380232760832e87364d9cdc56f0309d8b5"
+  integrity sha512-vPg4Q1z/gqCgJZGv6V6Q/Jb9wBlqHt55/KBNtrjv9vOhMquM/tBtFpw2G0l8O4enR7VRxuQhiQ5MCkILIr6Oyw==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -7622,7 +7622,7 @@ snyk@^1.316.1:
     snyk-go-plugin "1.17.0"
     snyk-gradle-plugin "3.16.0"
     snyk-module "3.1.0"
-    snyk-mvn-plugin "2.26.0"
+    snyk-mvn-plugin "2.26.1"
     snyk-nodejs-lockfile-parser "1.35.0"
     snyk-nuget-plugin "1.21.1"
     snyk-php-plugin "1.9.2"
