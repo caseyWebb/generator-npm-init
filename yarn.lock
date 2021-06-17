@@ -716,10 +716,10 @@
     js-yaml "^3.13.1"
     tslib "^1.10.0"
 
-"@snyk/code-client@3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.8.1.tgz#9e109004854ff3a3dd4f0e18a9526e0c4ab8bdaa"
-  integrity sha512-7HrkscxEXC5eVehZ6nip2uIFDbuvCuux0lrj78twaAnVn9uUx/4G7AKZl8JcrESQEN6py80tJzjvPlBybHJ1+g==
+"@snyk/code-client@3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@snyk/code-client/-/code-client-3.9.0.tgz#5cb690327765aa2546c74fa045bf32ac26dd6bd4"
+  integrity sha512-sscrpiODOlQI87B4OFIClnoZmHEHzJ7vULYhikS/R/2KavG4vGPw7Qe2to5rximxR3VFdWQ0wNVFB0RkU2mjPQ==
   dependencies:
     "@deepcode/dcignore" "^1.0.2"
     "@snyk/fast-glob" "^3.2.6-patch"
@@ -7566,14 +7566,14 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.634.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.634.0.tgz#4bfd898bfcdc54a4706313129beaf43acdff1237"
-  integrity sha512-8e45mjApX09tOR97e9EO9/yNJRe+E6vY+od9eGXMyR+eeLiluAv8XgwikdnX5wxNkZgkQAQCVv1nukdj8hrTgA==
+  version "1.635.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.635.0.tgz#c34262eaf5c62e4f39a1d9853ab9ccc05bf0eca8"
+  integrity sha512-BAGRy8Xcq37rZ2wGhHmt5rtRUhrLWjV48in2jPYXWIUq3zTjIFqjCjHXuMW7axj/VDGcdRmm2jP3B6xUCQGLew==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
     "@snyk/cloud-config-parser" "^1.9.2"
-    "@snyk/code-client" "3.8.1"
+    "@snyk/code-client" "3.9.0"
     "@snyk/dep-graph" "^1.27.1"
     "@snyk/fix" "1.620.0"
     "@snyk/gemfile" "1.2.0"
