@@ -823,10 +823,10 @@
     debug "4.3.1"
     tslib "^1.10.0"
 
-"@snyk/fix@1.649.0":
-  version "1.649.0"
-  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.649.0.tgz#5d56d3436ef6540d6e64e9b8721f53ddbf14ad8d"
-  integrity sha512-yYm6f8UmRPeQglDde8mDZU6ymQTyvlKcgJfG2dWjA0nQTbIo+aSqLGB9A5JyqVcJCEbwJrylNcPbYaxE9udnFg==
+"@snyk/fix@1.648.0":
+  version "1.648.0"
+  resolved "https://registry.yarnpkg.com/@snyk/fix/-/fix-1.648.0.tgz#bc256a42a4b46d4bf0d72a3eb9a72a8beea07c30"
+  integrity sha512-UZxBdzrOlu2fAINbJWfohAj1b4Bbo0P2NNy0QT62gPi5jIiQHnowAyAlsLHiQzmskYBvWMk9ks3XJdhjL2MELQ==
   dependencies:
     "@snyk/dep-graph" "^1.21.0"
     "@snyk/fix-pipenv-pipfile" "0.5.4"
@@ -7581,16 +7581,16 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.649.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.649.0.tgz#47d56656b95962f537467e50645f1ea7bbf14b8b"
-  integrity sha512-KIJYCxfuxUwaZhmtSQyOxv2Ya5ZX/r7FTqXujpCWV4X/Cx354GYFSxSX1uvi0AQk8GVO6xkzKKVNn14CtpnHiw==
+  version "1.650.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.650.0.tgz#81cc2c8967a9d8c35d0fb3617708d4a3a296bf7a"
+  integrity sha512-+ErRNirt/+8YR3ZgAsEV3gDt7j/eVxAHGesk/VyQBjOqKmJrEs7XJGPoDWR2TyGfMiwf6tx0CO1H0PjIPj64xw==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
     "@snyk/cloud-config-parser" "^1.9.2"
     "@snyk/code-client" "3.9.0"
     "@snyk/dep-graph" "^1.27.1"
-    "@snyk/fix" "1.649.0"
+    "@snyk/fix" "1.648.0"
     "@snyk/gemfile" "1.2.0"
     "@snyk/graphlib" "^2.1.9-patch.3"
     "@snyk/inquirer" "^7.3.3-patch"
