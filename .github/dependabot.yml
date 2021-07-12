@@ -1,0 +1,35 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "11:00"
+  open-pull-requests-limit: 10
+  versioning-strategy: widen
+  ignore:
+  - dependency-name: snyk
+    versions:
+    - 1.440.3
+    - 1.443.0
+    - 1.485.0
+    - 1.507.0
+    - 1.512.0
+    - 1.513.0
+    - 1.555.0
+    - 1.557.0
+    - 1.559.0
+    - 1.560.0
+    - 1.561.0
+    - 1.563.0
+    - 1.566.0
+    - 1.567.0
+    - 1.570.0
+  - dependency-name: yeoman-generator
+    versions:
+    - 5.0.0
+    - 5.0.1
+    - 5.1.0
+  - dependency-name: yeoman-test
+    versions:
+    - 4.0.0
