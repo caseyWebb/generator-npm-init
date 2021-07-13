@@ -7541,10 +7541,10 @@ snyk-resolve@1.1.0, snyk-resolve@^1.0.0, snyk-resolve@^1.1.0:
     debug "^4.1.1"
     promise-fs "^2.1.1"
 
-snyk-sbt-plugin@2.11.2:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.11.2.tgz#8ccca5da8aad9dd4c6bae80917ace53700b52ac9"
-  integrity sha512-EY9foT2bpl+Dbzj28zewJs7VyAhA4uQIiBABNCi9iaIXGfQLkhiXswkcwysOHxm6RxrXbMsbci0OvuDD7zh4Dg==
+snyk-sbt-plugin@2.11.3:
+  version "2.11.3"
+  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-2.11.3.tgz#5740a5d9edfea79b380040ad163683d45658f748"
+  integrity sha512-xcZAYENuEx+SG51AuLLL59jpN/qerJdSdznTANoyNM7bJjVhTvLTjEfoOxbeogZwKmFDKKUfc6Vw+EdEy8VZug==
   dependencies:
     debug "^4.1.1"
     semver "^6.1.2"
@@ -7579,9 +7579,9 @@ snyk-try-require@^2.0.0:
     lru-cache "^5.1.1"
 
 snyk@^1.316.1:
-  version "1.658.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.658.0.tgz#c92f522110f333d78c68f2c8df9fbb05a925883c"
-  integrity sha512-h39A1Y14Rr14o6Xfk78KwyLiuVGLCjpMwZQoK/6jNvaTPJAaxPG68HHuzjBJ5/j43w7AB8KBfqyf08+NKAIETA==
+  version "1.659.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.659.0.tgz#3d166563dae18b33f75d1c39278046fa118c8f94"
+  integrity sha512-DB00NiRd5ROXAWkNND4es7lPKzYmB2/g8o0eTkbvi4r9WBJsLNxUZMqsOS5IGsUdOqlxg18m4a/arZCXQuRnvg==
   dependencies:
     "@open-policy-agent/opa-wasm" "^1.2.0"
     "@snyk/cli-interface" "2.11.0"
@@ -7643,7 +7643,7 @@ snyk@^1.316.1:
     snyk-python-plugin "1.19.11"
     snyk-resolve "1.1.0"
     snyk-resolve-deps "4.7.2"
-    snyk-sbt-plugin "2.11.2"
+    snyk-sbt-plugin "2.11.3"
     snyk-try-require "1.3.1"
     source-map-support "^0.5.11"
     strip-ansi "^5.2.0"
