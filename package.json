@@ -31,7 +31,7 @@
     "eslint-config-profiscience": "^5.0.2",
     "jest": "^26.0.1",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^3.0.0"
+    "yeoman-test": "^4.0.1"
   },
   "repository": {
     "type": "git",
