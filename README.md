@@ -1,17 +1,14 @@
 # generator-npm-init
 
 [![Version][npm-version-shield]][npm]
-[![Build Status][travis-ci-shield]][travis-ci]
+[![Build Status][build-status-shield]][build-status]
 [![Coverage States][codecov-shield]][codecov]
-[![Dependency Status][david-dm-shield]][david-dm]
-[![Peer Dependency Status][david-dm-peer-shield]][david-dm-peer]
-[![Dev Dependency Status][david-dm-dev-shield]][david-dm-dev]
 [![Downloads][npm-stats-shield]][npm-stats]
 
 Yeoman generator implementation of `npm init`. Useful for composition.
 
 ```javascript
-this.composeWith(require.resolve('generator-npm-init/app')/*, options*/)
+this.composeWith(require.resolve('generator-npm-init/app') /*, options*/)
 ```
 
 ### Options
@@ -49,16 +46,10 @@ this.composeWith(require.resolve('generator-npm-init/app')/*, options*/)
 }
 ```
 
-[travis-ci]: https://travis-ci.org/caseyWebb/generator-npm-init/
-[travis-ci-shield]: https://img.shields.io/travis/caseyWebb/generator-npm-init/master.svg
+[build-status]: https://github.com/caseyWebb/generator-npm-init/actions/workflows/nodejs.yml
+[build-status-shield]: https://img.shields.io/travis/caseyWebb/generator-npm-init/master.svg
 [codecov]: https://codecov.io/gh/caseyWebb/generator-npm-init
 [codecov-shield]: https://img.shields.io/codecov/c/github/caseyWebb/generator-npm-init.svg
-[david-dm]: https://david-dm.org/caseyWebb/generator-npm-init
-[david-dm-shield]: https://david-dm.org/caseyWebb/generator-npm-init/status.svg
-[david-dm-peer]: https://david-dm.org/caseyWebb/generator-npm-init&type=peer
-[david-dm-peer-shield]: https://david-dm.org/caseyWebb/generator-npm-init/peer-status.svg
-[david-dm-dev]: https://david-dm.org/caseyWebb/generator-npm-init&type=dev
-[david-dm-dev-shield]: https://david-dm.org/caseyWebb/generator-npm-init/dev-status.svg
 [npm]: https://www.npmjs.com/package/generator-npm-init
 [npm-version-shield]: https://img.shields.io/npm/v/generator-npm-init.svg
 [npm-stats]: http://npm-stat.com/charts.html?package=generator-npm-init&author=&from=&to=
