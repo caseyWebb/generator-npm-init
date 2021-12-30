@@ -47,7 +47,7 @@ this.composeWith(require.resolve('generator-npm-init/app') /*, options*/)
 ```
 
 [build-status]: https://github.com/caseyWebb/generator-npm-init/actions/workflows/nodejs.yml
-[build-status-shield]: https://img.shields.io/travis/caseyWebb/generator-npm-init/master.svg
+[build-status-shield]: https://img.shields.io/github/workflow/status/caseyWebb/generator-npm-init/Node%20CI/master
 [codecov]: https://codecov.io/gh/caseyWebb/generator-npm-init
 [codecov-shield]: https://img.shields.io/codecov/c/github/caseyWebb/generator-npm-init.svg
 [npm]: https://www.npmjs.com/package/generator-npm-init
