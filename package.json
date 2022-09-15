@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.5",
-    "eslint": "^6.1.0",
+    "eslint": "^8.23.1",
     "eslint-config-profiscience": "^5.0.2",
     "jest": "^27.4.5",
     "yeoman-assert": "^3.0.0",
