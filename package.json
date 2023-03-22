@@ -18,7 +18,7 @@
     "package.json"
   ],
   "dependencies": {
-    "ini": "^2.0.0",
+    "ini": "^4.0.0",
     "lodash": "^4.17.11",
     "yeoman-environment": "^3.8.1",
     "yeoman-generator": "^5.4.2"
